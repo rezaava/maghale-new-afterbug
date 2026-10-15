@@ -1,0 +1,229 @@
+﻿<UserControl
+        x:Class="MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument.CreateDocumentSlide6"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        d:DesignHeight="600"
+        d:DesignWidth="800"
+        FlowDirection="RightToLeft"
+        FontFamily="Vazirmatn"
+        mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MaghaleNegar;component/Forms/Styles/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="SectionSeparator" TargetType="Separator">
+                <Setter Property="Height" Value="2"/>
+                <Setter Property="Margin" Value="0,10,0,15"/>
+                <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="Opacity" Value="0.3"/>
+            </Style>
+
+            <Style x:Key="InfoCard" TargetType="Border">
+                <Setter Property="Background" Value="#F8F9FA"/>
+                <Setter Property="BorderBrush" Value="#E0E0E0"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Padding" Value="15,12"/>
+                <Setter Property="Margin" Value="5,0,5,10"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="White" CornerRadius="0,0,10,10">
+        <Grid x:Name="gridMain">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ScrollViewer
+                    x:Name="scrollContent"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"
+                    VerticalScrollBarVisibility="Auto">
+
+                <StackPanel
+                        x:Name="stackContent"
+                        Margin="20,0,20,20"
+                        Orientation="Vertical">
+
+                    <!-- ========================================== -->
+                    <!-- عنوان صفحه -->
+                    <!-- ========================================== -->
+
+                    <TextBlock 
+                            Text="✅ تأیید نهایی اطلاعات"
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Foreground="#2E7D32"
+                            Margin="5,0,5,20" />
+
+                    <TextBlock 
+                            Text="لطفاً اطلاعات زیر را بررسی کرده و تأیید کنید."
+                            FontSize="14"
+                            Foreground="#666666"
+                            Margin="5,0,5,15" />
+
+                    <Separator Style="{StaticResource SectionSeparator}" />
+
+                    <!-- ========================================== -->
+                    <!-- اطلاعات مقاله -->
+                    <!-- ========================================== -->
+
+                    <TextBlock 
+                            Text="📄 اطلاعات مقاله"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="{StaticResource PrimaryBackgroundColor}"
+                            Margin="5,0,5,10" />
+
+                    <Border Style="{StaticResource InfoCard}">
+                        <StackPanel>
+                            <TextBlock x:Name="txtTitleFa" FontSize="14" Foreground="#333333" TextWrapping="Wrap" />
+                            <TextBlock x:Name="txtTitleEn" FontSize="14" Foreground="#333333" TextWrapping="Wrap" Margin="0,5,0,0" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- ========================================== -->
+                    <!-- اطلاعات نویسندگان -->
+                    <!-- ========================================== -->
+
+                    <TextBlock 
+                            Text="✍️ نویسندگان"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="{StaticResource PrimaryBackgroundColor}"
+                            Margin="5,0,5,10" />
+
+                    <Border Style="{StaticResource InfoCard}">
+                        <DataGrid
+                                x:Name="dgAuthors"
+                                Margin="0"
+                                AutoGenerateColumns="False"
+                                CanUserAddRows="False"
+                                CanUserDeleteRows="False"
+                                CanUserReorderColumns="False"
+                                CanUserResizeColumns="True"
+                                CanUserSortColumns="True"
+                                HeadersVisibility="Column"
+                                IsReadOnly="True"
+                                MaxHeight="150"
+                                MinHeight="100"
+                                GridLinesVisibility="Horizontal"
+                                AlternatingRowBackground="#F5F5F5"
+                                RowHeight="30"
+                                FontSize="13"
+                                BorderBrush="#DDDDDD"
+                                BorderThickness="0"
+                                Background="Transparent">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Index}" Header="#" Width="Auto" MinWidth="30" />
+                                <DataGridTextColumn Binding="{Binding AuthorName}" Header="نام" Width="2*" />
+                                <DataGridTextColumn Binding="{Binding AuthorNameEn}" Header="نام (انگلیسی)" Width="2*" />
+                                <DataGridTextColumn Binding="{Binding AffiliationFa}" Header="وابستگی علمی" Width="3*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+
+                    <!-- ========================================== -->
+                    <!-- انتخاب نویسنده برای نمایش اطلاعات -->
+                    <!-- ========================================== -->
+
+                    <TextBlock 
+                            Text="👤 مشاهده اطلاعات نویسنده"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="{StaticResource PrimaryBackgroundColor}"
+                            Margin="5,0,5,10" />
+
+                    <ComboBox
+                            x:Name="cmbAuthorSelector"
+                            Margin="5,0,5,15"
+                            materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
+                            materialDesign:HintAssist.FloatingScale="1"
+                            materialDesign:HintAssist.Hint="انتخاب نویسنده برای مشاهده اطلاعات"
+                            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                            SelectionChanged="CmbAuthorSelector_SelectionChanged" />
+
+                    <Border Style="{StaticResource InfoCard}">
+                        <StackPanel>
+                            <TextBlock x:Name="txtAuthorName" FontSize="14" Foreground="#333333" TextWrapping="Wrap" />
+                            <TextBlock x:Name="txtAuthorNameEn" FontSize="14" Foreground="#333333" TextWrapping="Wrap" Margin="0,5,0,0" />
+                            <TextBlock x:Name="txtAuthorAffiliationFa" FontSize="14" Foreground="#333333" TextWrapping="Wrap" Margin="0,5,0,0" />
+                            <TextBlock x:Name="txtAuthorAffiliationEn" FontSize="14" Foreground="#333333" TextWrapping="Wrap" Margin="0,5,0,0" />
+                        </StackPanel>
+                    </Border>
+
+                   
+
+                    <!-- ========================================== -->
+                    <!-- چک‌باکس تأیید -->
+                    <!-- ========================================== -->
+
+                    <CheckBox 
+                            x:Name="chkConfirm"
+                            Margin="5,0,5,15"
+                            Content=" اطلاعات وارد شده دوباره بررسی شد و مشکل نگارشی ندارند و مورد تأیید است."
+                            FontSize="13"
+                            FontWeight="SemiBold"
+                            Foreground="#333333"
+                            Checked="ChkConfirm_Checked"
+                            Unchecked="ChkConfirm_Unchecked" />
+
+                    <!-- ========================================== -->
+                    <!-- وضعیت -->
+                    <!-- ========================================== -->
+
+                    <TextBlock x:Name="lblStatus" FontSize="12" Foreground="#FF9800" Margin="5,5,5,0">
+                        ⚠️ لطفاً اطلاعات را بررسی و تأیید کنید.
+                    </TextBlock>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- دکمه‌ها -->
+            <Grid x:Name="gridTransitionButtons" Grid.Row="1" Margin="10,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                        x:Name="btnBackward"
+                        Grid.Column="0"
+                        Height="42"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Bottom"
+                        materialDesign:ButtonAssist.CornerRadius="6"
+                        Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"
+                        Content="قبلی"
+                        FontSize="14"
+                        Foreground="{StaticResource LightButtonTextColor}"
+                        />
+
+                <Button
+                        x:Name="btnCreateDocument"
+                        Grid.Column="1"
+                        Height="42"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Bottom"
+                        materialDesign:ButtonAssist.CornerRadius="6"
+                        Content="ایجاد مقاله"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Foreground="{StaticResource LightButtonTextColor}"
+                        IsEnabled="False"
+                        Click="btnCreateDocument_Click" />
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

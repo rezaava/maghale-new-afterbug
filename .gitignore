@@ -1,0 +1,40 @@
+# پوشه‌های خروجی build
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# تنظیمات Visual Studio (مخصوص هر کامپیوتر)
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# پکیج‌های NuGet (با restore دوباره دانلود می‌شوند)
+packages/
+*.nupkg
+
+# خروجی publish و ClickOnce (مخصوص VSTO)
+publish/
+Publish/
+*.publish.xml
+*.application
+*.vsto
+*.manifest
+
+# کلید و گواهی امضا (حساس است، هرگز وارد گیت نشود)
+*.pfx
+*.snk
+
+# لاگ و فایل‌های موقت
+*.log
+*.tmp
+*.cache
+~$*
+
+# فایل‌های ویندوز
+Thumbs.db
+Desktop.ini
