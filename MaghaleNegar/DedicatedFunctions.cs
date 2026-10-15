@@ -1,4 +1,15 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using MaghaleNegar.Constants;
+using MaghaleNegar.Forms;
+using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.View;
+using MaghaleNegar.Models;
+using MaghaleNegar.TaskPanes.CrossReference;
+using MaghaleNegar.Templates;
+using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Tools;
+using Microsoft.Win32;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -17,16 +28,6 @@ using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DocumentFormat.OpenXml.Packaging;
-using Microsoft.Office.Interop.Word;
-using Microsoft.Office.Tools;
-using Microsoft.Win32;
-using MaghaleNegar.Constants;
-using MaghaleNegar.Forms;
-using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.View;
-using MaghaleNegar.Models;
-using MaghaleNegar.TaskPanes.CrossReference;
-using MaghaleNegar.Templates;
 using Task = System.Threading.Tasks.Task;
 
 namespace MaghaleNegar
@@ -6586,66 +6587,192 @@ namespace MaghaleNegar
         #endregion
 
 
-        #region CSV آپدیت ها
+        //#region CSV آپدیت ها
+        //public static class CsvDownloader
+        //{
+        //    public static List<string> GetCsvFilesByCode(string code)
+        //    {
+        //        string virastarFolder =
+        //            Properties.Settings.Default.WorkSpaceDirectory +
+        //            StringConstant.VirastarFolder;
+
+
+        //        if (!Directory.Exists(virastarFolder))
+        //            return new List<string>();
+
+
+        //        return Directory.GetFiles(virastarFolder, "*.csv")
+        //            .Where(file =>
+        //            {
+        //                string fileName = Path.GetFileNameWithoutExtension(file);
+
+        //                return fileName.EndsWith(code);
+        //            })
+        //            .ToList();
+        //    }
+
+
+        //    private static readonly HttpClient HttpClient = new HttpClient();
+
+        //    private const string CsvListUrl = "https://shivanegar.ir/api/getcsv";
+
+
+        //    public static async Task DownloadAllCsvFilesAsync()
+        //    {
+        //        try
+        //        {
+        //            // مسیر پوشه‌ای که کدهای فعلی از آن می‌خوانند
+        //            string virastarFolder =
+        //                Properties.Settings.Default.WorkSpaceDirectory +
+        //                StringConstant.VirastarFolder;
+
+
+        //            // اگر پوشه وجود نداشت بساز
+        //            if (!Directory.Exists(virastarFolder))
+        //            {
+        //                Directory.CreateDirectory(virastarFolder);
+        //            }
+
+
+        //            // گرفتن لیست فایل‌ها از API
+        //            List<string> csvUrls = await GetCsvUrlsAsync();
+
+
+        //            foreach (string csvUrl in csvUrls)
+        //            {
+        //                try
+        //                {
+        //                    await DownloadFileAsync(csvUrl, virastarFolder);
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    // اگر یک فایل مشکل داشت، بقیه ادامه پیدا کنند
+        //                    Console.WriteLine(ex.Message);
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine("خطا در دانلود CSV ها : " + ex.Message);
+        //        }
+        //    }
+
+
+
+        //    private static async Task<List<string>> GetCsvUrlsAsync()
+        //    {
+        //        string json = await HttpClient.GetStringAsync(CsvListUrl);
+
+
+        //        var response =
+        //            System.Text.Json.JsonSerializer.Deserialize<CsvListResponse>(
+        //            json,
+        //            new System.Text.Json.JsonSerializerOptions
+        //            {
+        //                PropertyNameCaseInsensitive = true
+        //            });
+
+
+        //        if (response == null ||
+        //            response.Status != "1" ||
+        //            response.Csv == null)
+        //        {
+        //            throw new Exception("دریافت لیست CSV ها ناموفق بود.");
+        //        }
+
+
+        //        return response.Csv;
+        //    }
+
+
+        //    private static async Task DownloadFileAsync(
+        //    string url,
+        //    string folder)
+        //    {
+        //        byte[] data =
+        //            await HttpClient.GetByteArrayAsync(url);
+
+
+        //        string fileName =
+        //            Path.GetFileName(new Uri(url).LocalPath);
+
+
+        //        string filePath =
+        //            Path.Combine(folder, fileName);
+
+        //        File.WriteAllBytes(filePath, data);
+
+
+        //        Console.WriteLine("Downloaded : " + fileName);
+        //    }
+
+
+
+        //    private class CsvListResponse
+        //    {
+        //        public string Status { get; set; }
+
+        //        public List<string> Csv { get; set; }
+        //    }
+        //}
+        //#endregion
+
+
         public static class CsvDownloader
         {
+            private static readonly HttpClient HttpClient = new HttpClient();
+            private const string CsvListUrl = "https://shivanegar.ir/api/getcsv";
+
+            private static readonly ConcurrentDictionary<string, string> CsvCache =
+                new ConcurrentDictionary<string, string>();
+
+            // Task دانلود رو نگه می‌داریم تا هر جای برنامه بشه منتظرش موند
+            private static Task _downloadTask;
+            private static readonly object LockObj = new object();
+
             public static List<string> GetCsvFilesByCode(string code)
             {
-                string virastarFolder =
-                    Properties.Settings.Default.WorkSpaceDirectory +
-                    StringConstant.VirastarFolder;
-
-
-                if (!Directory.Exists(virastarFolder))
-                    return new List<string>();
-
-
-                return Directory.GetFiles(virastarFolder, "*.csv")
-                    .Where(file =>
-                    {
-                        string fileName = Path.GetFileNameWithoutExtension(file);
-
-                        return fileName.EndsWith(code);
-                    })
+                return CsvCache
+                    .Where(kvp => Path.GetFileNameWithoutExtension(kvp.Key).EndsWith(code))
+                    .Select(kvp => kvp.Value)
                     .ToList();
             }
 
+            // در Startup صدا زده می‌شه: دانلود رو شروع می‌کنه (fire-and-forget از دید caller)
+            public static void StartDownload()
+            {
+                lock (LockObj)
+                {
+                    if (_downloadTask == null)
+                        _downloadTask = DownloadAllCsvFilesAsync();
+                }
+            }
 
-            private static readonly HttpClient HttpClient = new HttpClient();
-
-            private const string CsvListUrl = "https://shivanegar.ir/api/getcsv";
-
+            // هر جای دیگه‌ای که قبل از استفاده باید مطمئن بشیم دانلود تموم شده
+            public static Task WaitUntilReadyAsync()
+            {
+                lock (LockObj)
+                {
+                    if (_downloadTask == null)
+                        _downloadTask = DownloadAllCsvFilesAsync();
+                }
+                return _downloadTask;
+            }
 
             public static async Task DownloadAllCsvFilesAsync()
             {
                 try
                 {
-                    // مسیر پوشه‌ای که کدهای فعلی از آن می‌خوانند
-                    string virastarFolder =
-                        Properties.Settings.Default.WorkSpaceDirectory +
-                        StringConstant.VirastarFolder;
-
-
-                    // اگر پوشه وجود نداشت بساز
-                    if (!Directory.Exists(virastarFolder))
-                    {
-                        Directory.CreateDirectory(virastarFolder);
-                    }
-
-
-                    // گرفتن لیست فایل‌ها از API
                     List<string> csvUrls = await GetCsvUrlsAsync();
-
 
                     foreach (string csvUrl in csvUrls)
                     {
                         try
                         {
-                            await DownloadFileAsync(csvUrl, virastarFolder);
+                            await LoadToMemoryAsync(csvUrl);
                         }
                         catch (Exception ex)
                         {
-                            // اگر یک فایل مشکل داشت، بقیه ادامه پیدا کنند
                             Console.WriteLine(ex.Message);
                         }
                     }
@@ -6653,68 +6780,51 @@ namespace MaghaleNegar
                 catch (Exception ex)
                 {
                     Console.WriteLine("خطا در دانلود CSV ها : " + ex.Message);
+                    throw; // تا WaitUntilReadyAsync هم از خطا باخبر بشه
                 }
             }
 
-
+            public static void ClearCache()
+            {
+                CsvCache.Clear();
+                _downloadTask = null;
+            }
 
             private static async Task<List<string>> GetCsvUrlsAsync()
             {
                 string json = await HttpClient.GetStringAsync(CsvListUrl);
 
-
-                var response =
-                    System.Text.Json.JsonSerializer.Deserialize<CsvListResponse>(
+                var response = System.Text.Json.JsonSerializer.Deserialize<CsvListResponse>(
                     json,
-                    new System.Text.Json.JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+                    new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-
-                if (response == null ||
-                    response.Status != "1" ||
-                    response.Csv == null)
-                {
+                if (response == null || response.Status != "1" || response.Csv == null)
                     throw new Exception("دریافت لیست CSV ها ناموفق بود.");
-                }
-
 
                 return response.Csv;
             }
 
-
-            private static async Task DownloadFileAsync(
-            string url,
-            string folder)
+            private static async Task LoadToMemoryAsync(string url)
             {
-                byte[] data =
-                    await HttpClient.GetByteArrayAsync(url);
+                byte[] data = await HttpClient.GetByteArrayAsync(url);
 
+                string content;
+                using (var stream = new MemoryStream(data))
+                using (var reader = new StreamReader(stream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true))
+                {
+                    content = reader.ReadToEnd();
+                }
 
-                string fileName =
-                    Path.GetFileName(new Uri(url).LocalPath);
-
-
-                string filePath =
-                    Path.Combine(folder, fileName);
-
-                File.WriteAllBytes(filePath, data);
-
-
-                Console.WriteLine("Downloaded : " + fileName);
+                string fileName = Path.GetFileName(new Uri(url).LocalPath);
+                CsvCache[fileName] = content;
             }
-
-
 
             private class CsvListResponse
             {
                 public string Status { get; set; }
-
                 public List<string> Csv { get; set; }
             }
         }
-        #endregion
 
         public static async System.Threading.Tasks.Task<HttpResponseMessage> httpAsyncPostRequestAsync(
         string baseAddress,

@@ -42,6 +42,7 @@ using System.Windows.Forms;
 using static MaghaleNegar.DedicatedFunctions;
 using System.Drawing;
 using System.Windows.Forms;
+using Task = System.Threading.Tasks.Task;
 
 namespace MaghaleNegar
 {
@@ -325,6 +326,8 @@ namespace MaghaleNegar
         {
             try
             {
+                CsvDownloader.StartDownload();
+
                 //CSV download
 
                 await CsvDownloader.DownloadAllCsvFilesAsync();
@@ -599,6 +602,8 @@ namespace MaghaleNegar
         }
         private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
+            CsvDownloader.ClearCache();
+
             if (Properties.Settings.Default.RememberUser == false)
             {
                 Properties.Settings.Default.UserToken = "";
@@ -1811,14 +1816,303 @@ namespace MaghaleNegar
 
         #region Virastar
 
-        public void insertHalfSpace()
+
+
+        //public async void insertHalfSpace()
+        //{
+        //    Selection selection = Globals.ThisAddIn.Application.Selection;
+        //    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("درج نیم‌فاصله");
+        //    DedicatedFunctions.insertHalfSpace(selection);
+        //    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+        //}
+        //public void halfSpaceCorrection()
+        //{
+        //    Document doc;
+        //    try
+        //    {
+        //        doc = Globals.ThisAddIn.Application.ActiveDocument;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return;
+        //    }
+
+        //    DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
+        //    if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
+        //    {
+        //        // ====== شروع Track Changes ======
+        //        bool trackWasEnabled = doc.TrackRevisions;
+        //        if (!trackWasEnabled)
+        //        {
+        //            doc.TrackRevisions = true;
+        //            doc.ShowRevisions = true;
+        //        }
+
+        //        try
+        //        {
+        //            await EnsureCsvReadyWithLoadingAsync();
+
+        //            //string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+        //            List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+        //            if (Directory.Exists(virastarFolder))
+        //            {
+        //                string[] files = Directory.GetFiles(
+        //                    virastarFolder,
+        //                    $"*{StringConstant.ButtonCodeHalfSpace}.csv");
+
+        //                foreach (string file in files)
+        //                {
+        //                    using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+        //                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        //                    {
+        //                        standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+        //                    }
+        //                }
+        //            }
+
+        //            LoadingForm loadingForm = new LoadingForm();
+        //            if (doc.ActiveWindow.Selection.Words.Count >= 2)
+        //            {
+        //                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نیم‌فاصله‌");
+        //                System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
+        //            }
+        //            else
+        //            {
+        //                if (DedicatedFunctions.ShowMessage("متنی برای رعایت نیم‌فاصله انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+        //                {
+        //                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نیم‌فاصله‌ها");
+        //                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+        //                }
+        //                else
+        //                    return;
+        //            }
+        //            loadingForm.ShowDialog();
+        //            Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+        //            int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+
+        //            ShowReviewFormAfterEditing();
+
+        //            // ====== پایان Track Changes ======
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.saveDocument(doc);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح نیم‌فاصله:\n{ex.Message}");
+        //        }
+        //    }
+        //}
+        //public void spellingCorrection()
+        //{
+        //    Document doc;
+        //    try
+        //    {
+        //        doc = Globals.ThisAddIn.Application.ActiveDocument;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return;
+        //    }
+
+        //    DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
+        //    if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
+        //    {
+        //        // ====== شروع Track Changes ======
+        //        bool trackWasEnabled = doc.TrackRevisions;
+        //        if (!trackWasEnabled)
+        //        {
+        //            doc.TrackRevisions = true;
+        //            doc.ShowRevisions = true;
+        //        }
+
+        //        try
+        //        {
+        //            string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+        //            List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+        //            if (Directory.Exists(virastarFolder))
+        //            {
+        //                string[] files = Directory.GetFiles(
+        //                    virastarFolder,
+        //                    $"*{StringConstant.ButtonCodeSpelling}.csv");
+
+        //                foreach (string file in files)
+        //                {
+        //                    using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+        //                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        //                    {
+        //                        standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+        //                    }
+        //                }
+        //            }
+
+        //            LoadingForm loadingForm = new LoadingForm();
+        //            if (doc.ActiveWindow.Selection.Words.Count >= 2)
+        //            {
+        //                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح غلط املایی‌");
+        //                System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
+        //            }
+        //            else
+        //            {
+        //                if (DedicatedFunctions.ShowMessage("متنی برای تصحیح غلط املایی انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+        //                {
+        //                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی غلط املایی ها");
+        //                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+        //                }
+        //                else
+        //                    return;
+        //            }
+        //            loadingForm.ShowDialog();
+        //            Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+        //            int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+
+        //            ShowReviewFormAfterEditing();
+
+        //            // ====== پایان Track Changes ======
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.saveDocument(doc);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح غلط املایی:\n{ex.Message}");
+        //        }
+        //    }
+        //}
+        //public void neshanehGozariCorrection()
+        //{
+        //    Document doc;
+        //    try
+        //    {
+        //        doc = Globals.ThisAddIn.Application.ActiveDocument;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return;
+        //    }
+        //    DedicatedFunctions.AccessType accessType = DedicatedFunctions.hasAccess(doc);
+        //    if (accessType == AccessType.AccessGranted || accessType == AccessType.AccessGranted_Administrator)
+        //    {
+        //        // ====== شروع Track Changes ======
+        //        bool trackWasEnabled = doc.TrackRevisions;
+        //        if (!trackWasEnabled)
+        //        {
+        //            doc.TrackRevisions = true;
+        //            doc.ShowRevisions = true;
+        //        }
+
+        //        try
+        //        {
+        //            string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+
+        //            List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+        //            if (Directory.Exists(virastarFolder))
+        //            {
+        //                string[] files = Directory.GetFiles(
+        //                    virastarFolder,
+        //                    $"*{StringConstant.ButtonCodeSigns}.csv");
+
+        //                foreach (string file in files)
+        //                {
+        //                    using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+        //                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        //                    {
+        //                        standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+        //                    }
+        //                }
+        //            }
+
+        //            // correct Spaces
+        //            SearchReplaceModel whiteSpaceCorrection = new SearchReplaceModel()
+        //            {
+        //                Search = "^w",
+        //                Replace = " ",
+        //                Wildcard = "0",
+        //                MatchCase = "1",
+        //                MatchWholeWord = "1",
+        //                MatchKashida = "0",
+        //                MatchDiacritics = "0",
+        //                MatchAlefHamza = "0",
+        //                CounterUp = "0"
+        //            };
+        //            standardModels.Add(whiteSpaceCorrection);
+
+        //            LoadingForm loadingForm = new LoadingForm();
+
+        //            if (doc.ActiveWindow.Selection.Words.Count >= 2)
+        //            {
+        //                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح نشانه گذاری (سجاوندی)");
+        //                System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc.ActiveWindow.Selection.Range, standardModels));
+        //            }
+        //            else
+        //            {
+        //                DialogResult dr = DedicatedFunctions.ShowMessage("متنی برای رعایت نشانه گذاری (سجاوندی) انتخاب نشده؛ در کل سند اعمال شود؟", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+        //                if (dr == DialogResult.Yes)
+        //                {
+        //                    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("تصحیح تمامی نشانه گذاری (سجاوندی) ها");
+        //                    System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
+        //                }
+        //                else
+        //                    return;
+        //            }
+
+        //            loadingForm.ShowDialog();
+        //            Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+
+        //            int countOfChanges = ThisAddIn.LastCountOfChanges;
+
+        //            ShowReviewFormAfterEditing();
+
+        //            // ====== پایان Track Changes ======
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.saveDocument(doc);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (!trackWasEnabled)
+        //            {
+        //                doc.TrackRevisions = false;
+        //            }
+        //            DedicatedFunctions.ShowErrorMessage($"خطا در تصحیح نشانه گذاری:\n{ex.Message}");
+        //        }
+        //    }
+
+        //}
+
+        public async void insertHalfSpace()
         {
             Selection selection = Globals.ThisAddIn.Application.Selection;
             Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("درج نیم‌فاصله");
             DedicatedFunctions.insertHalfSpace(selection);
             Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
         }
-        public void halfSpaceCorrection()
+
+        public async void halfSpaceCorrection()
         {
             Document doc;
             try
@@ -1843,25 +2137,9 @@ namespace MaghaleNegar
 
                 try
                 {
-                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+                    await EnsureCsvReadyWithLoadingAsync();
 
-                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                    if (Directory.Exists(virastarFolder))
-                    {
-                        string[] files = Directory.GetFiles(
-                            virastarFolder,
-                            $"*{StringConstant.ButtonCodeHalfSpace}.csv");
-
-                        foreach (string file in files)
-                        {
-                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                            {
-                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
-                            }
-                        }
-                    }
+                    List<SearchReplaceModel> standardModels = LoadStandardModels(StringConstant.ButtonCodeHalfSpace);
 
                     LoadingForm loadingForm = new LoadingForm();
                     if (doc.ActiveWindow.Selection.Words.Count >= 2)
@@ -1877,13 +2155,16 @@ namespace MaghaleNegar
                             System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
                         }
                         else
+                        {
+                            if (!trackWasEnabled)
+                                doc.TrackRevisions = false;
                             return;
+                        }
                     }
                     loadingForm.ShowDialog();
                     Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
 
                     int countOfChanges = ThisAddIn.LastCountOfChanges;
-                    
 
                     ShowReviewFormAfterEditing();
 
@@ -1904,7 +2185,8 @@ namespace MaghaleNegar
                 }
             }
         }
-        public void spellingCorrection()
+
+        public async void spellingCorrection()
         {
             Document doc;
             try
@@ -1929,25 +2211,9 @@ namespace MaghaleNegar
 
                 try
                 {
-                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+                    await EnsureCsvReadyWithLoadingAsync();
 
-                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                    if (Directory.Exists(virastarFolder))
-                    {
-                        string[] files = Directory.GetFiles(
-                            virastarFolder,
-                            $"*{StringConstant.ButtonCodeSpelling}.csv");
-
-                        foreach (string file in files)
-                        {
-                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                            {
-                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
-                            }
-                        }
-                    }
+                    List<SearchReplaceModel> standardModels = LoadStandardModels(StringConstant.ButtonCodeSpelling);
 
                     LoadingForm loadingForm = new LoadingForm();
                     if (doc.ActiveWindow.Selection.Words.Count >= 2)
@@ -1963,13 +2229,16 @@ namespace MaghaleNegar
                             System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
                         }
                         else
+                        {
+                            if (!trackWasEnabled)
+                                doc.TrackRevisions = false;
                             return;
+                        }
                     }
                     loadingForm.ShowDialog();
                     Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
 
                     int countOfChanges = ThisAddIn.LastCountOfChanges;
-                    
 
                     ShowReviewFormAfterEditing();
 
@@ -1990,7 +2259,8 @@ namespace MaghaleNegar
                 }
             }
         }
-        public void neshanehGozariCorrection()
+
+        public async void neshanehGozariCorrection()
         {
             Document doc;
             try
@@ -2014,25 +2284,9 @@ namespace MaghaleNegar
 
                 try
                 {
-                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+                    await EnsureCsvReadyWithLoadingAsync();
 
-                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                    if (Directory.Exists(virastarFolder))
-                    {
-                        string[] files = Directory.GetFiles(
-                            virastarFolder,
-                            $"*{StringConstant.ButtonCodeSigns}.csv");
-
-                        foreach (string file in files)
-                        {
-                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                            {
-                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
-                            }
-                        }
-                    }
+                    List<SearchReplaceModel> standardModels = LoadStandardModels(StringConstant.ButtonCodeSigns);
 
                     // correct Spaces
                     SearchReplaceModel whiteSpaceCorrection = new SearchReplaceModel()
@@ -2066,7 +2320,11 @@ namespace MaghaleNegar
                             System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
                         }
                         else
+                        {
+                            if (!trackWasEnabled)
+                                doc.TrackRevisions = false;
                             return;
+                        }
                     }
 
                     loadingForm.ShowDialog();
@@ -2094,6 +2352,53 @@ namespace MaghaleNegar
             }
         }
 
+        // ====== متدهای کمکی مشترک ======
+
+        private async Task EnsureCsvReadyWithLoadingAsync()
+        {
+            Task downloadTask = CsvDownloader.WaitUntilReadyAsync();
+
+            if (downloadTask.IsCompleted)
+            {
+                await downloadTask; // اگه قبلاً خطا خورده بود، اینجا throw می‌شه
+                return;
+            }
+
+            using (var waitForm = new LoadingForm())
+            {
+                waitForm.Show();
+                waitForm.Refresh();
+                try
+                {
+                    await downloadTask;
+                }
+                finally
+                {
+                    waitForm.Close();
+                }
+            }
+        }
+
+        private List<SearchReplaceModel> LoadStandardModels(string buttonCode)
+        {
+            List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
+
+            List<string> csvContents = CsvDownloader.GetCsvFilesByCode(buttonCode);
+
+            foreach (string content in csvContents)
+            {
+                using (var reader = new StringReader(content))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
+                }
+            }
+
+            return standardModels;
+        }
+
+
+
         /// <summary>
         /// پاک کردن تمام تغییرات Track Changes قبلی (پذیرفتن همه تغییرات)
         /// </summary>
@@ -2117,7 +2422,7 @@ namespace MaghaleNegar
             }
         }
 
-        public void standardCorrection()
+        public async void standardCorrection()
         {
             Document doc;
             try
@@ -2144,25 +2449,9 @@ namespace MaghaleNegar
 
                 try
                 {
-                    string virastarFolder = Properties.Settings.Default.WorkSpaceDirectory + StringConstant.VirastarFolder;
+                    await EnsureCsvReadyWithLoadingAsync();
 
-                    List<SearchReplaceModel> standardModels = new List<SearchReplaceModel>();
-
-                    if (Directory.Exists(virastarFolder))
-                    {
-                        string[] files = Directory.GetFiles(
-                            virastarFolder,
-                            $"*{StringConstant.ButtonCodeStandard}.csv");
-
-                        foreach (string file in files)
-                        {
-                            using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
-                            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                            {
-                                standardModels.AddRange(csv.GetRecords<SearchReplaceModel>());
-                            }
-                        }
-                    }
+                    List<SearchReplaceModel> standardModels = LoadStandardModels(StringConstant.ButtonCodeStandard);
 
                     LoadingForm loadingForm = new LoadingForm();
 
@@ -2179,7 +2468,11 @@ namespace MaghaleNegar
                             System.Threading.Tasks.Task.Run(() => DedicatedFunctions.StringCorrection(loadingForm, doc, standardModels));
                         }
                         else
+                        {
+                            if (!trackWasEnabled)
+                                doc.TrackRevisions = false;
                             return;
+                        }
                     }
                     loadingForm.ShowDialog();
                     Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
@@ -2206,7 +2499,6 @@ namespace MaghaleNegar
                 }
             }
         }
-
         public void convertNumber(bool toPersian)
         {
             Document doc;
