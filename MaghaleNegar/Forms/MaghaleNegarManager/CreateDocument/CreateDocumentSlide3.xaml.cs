@@ -91,7 +91,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             }
 
             // تنظیم اولیه ایمیل
-            txtBoxEmail.IsEnabled = false;
+            txtBoxEmail.IsEnabled = true;
             txtBoxEmail.Text = "";
 
             // رویدادهای CheckBox
@@ -215,7 +215,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     txtBoxAreaOfStudy.Text = "";
                     txtBoxAreaOfStudyEn.Text = "";
                     txtBoxEmail.Text = "";
-                    txtBoxEmail.IsEnabled = false;
+                    txtBoxEmail.IsEnabled = true;
                     chkResponsibleAuthor.IsChecked = false;
 
                     // بازگشت به حالت عادی
@@ -268,7 +268,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudy.Text = "";
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
-                txtBoxEmail.IsEnabled = false;
+                txtBoxEmail.IsEnabled = true;
                 chkResponsibleAuthor.IsChecked = false;
 
                 // پاک کردن خطاها
@@ -424,7 +424,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudy.Text = "";
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
-                txtBoxEmail.IsEnabled = false;
+                txtBoxEmail.IsEnabled = true;
                 chkResponsibleAuthor.IsChecked = false;
 
                 // پاک کردن خطاها
@@ -513,8 +513,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
         private void ChkResponsibleAuthor_Unchecked(object sender, RoutedEventArgs e)
         {
-            txtBoxEmail.IsEnabled = false;
-            txtBoxEmail.Text = "";
+            //txtBoxEmail.IsEnabled = true;
 
             var emailModel = textBoxControlModels.FirstOrDefault(m => m.Control == txtBoxEmail);
             if (emailModel != null)
@@ -737,7 +736,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudy.Text = "";
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
-                txtBoxEmail.IsEnabled = false;
+                txtBoxEmail.IsEnabled = true;
                 chkResponsibleAuthor.IsChecked = false;
             });
             #endregion
