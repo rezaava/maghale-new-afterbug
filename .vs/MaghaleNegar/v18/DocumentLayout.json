@@ -11,20 +11,8 @@
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|E:\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide4.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide4.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|E:\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|E:\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|E:\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|E:\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -52,10 +40,21 @@
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
               "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
               "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
-              "ViewState": "AgIAAPYCAAAAAAAAAAAAwP8CAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAACoDAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T04:42:27.658Z",
+              "WhenOpened": "2026-10-18T06:19:47.319Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateDocumentControl.xaml",
+              "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
+              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-18T06:19:27.899Z"
             },
             {
               "$type": "Document",
@@ -63,56 +62,10 @@
               "Title": "CreateDocumentSlide3.xaml",
               "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
-              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
+              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml*",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-17T04:41:47.607Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateDocumentSlide4.xaml",
-              "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide4.xaml",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide4.xaml",
-              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide4.xaml",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide4.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-17T04:41:44.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateDocumentSlide5.xaml.cs",
-              "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
-              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T04:41:37.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateDocumentSlide5.xaml",
-              "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
-              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-17T04:41:32.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "app.manifest",
-              "DocumentMoniker": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\app.manifest",
-              "RelativeDocumentMoniker": "MaghaleNegar\\app.manifest",
-              "ToolTip": "E:\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\app.manifest",
-              "RelativeToolTip": "MaghaleNegar\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2026-10-15T07:01:22.418Z"
+              "WhenOpened": "2026-10-18T06:18:26.831Z"
             }
           ]
         }

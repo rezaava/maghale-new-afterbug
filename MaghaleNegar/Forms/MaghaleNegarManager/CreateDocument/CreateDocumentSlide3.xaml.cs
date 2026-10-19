@@ -181,6 +181,15 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     return;
                 }
 
+                if (isResponsible && string.IsNullOrEmpty(email))
+                {
+                    MessageBox.Show("برای نویسنده مسئول، ایمیل الزامی است.", "خطا",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    txtBoxEmail.Focus();
+
+                    return;
+                }
+
                 // ✅ اگر در حالت ویرایش هستیم
                 if (isEditingMode && editingAuthor != null)
                 {
@@ -471,6 +480,10 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         #endregion
 
         #region CheckBox Events
+        private void UpdateEmailHint(bool isRequired)
+        {
+            HintAssist.SetHint(txtBoxEmail, isRequired ? "ایمیل (اجباری)" : "ایمیل (اختیاری)");
+        }
         private void ChkResponsibleAuthor_Checked(object sender, RoutedEventArgs e)
         {
             // ✅ اگر در حالت ویرایش هستیم و نویسنده در حال ویرایش، اجازه تغییر بده
@@ -485,6 +498,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     emailControlModel.ControlLevel = ControlLevels.Essential;
                     emailControlModel.Validate = validateTextBox(txtBoxEmail, ControlLevels.Essential, false);
                 }
+                UpdateEmailHint(true);
                 validateControls();
                 return;
             }
@@ -508,6 +522,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 emailModel.ControlLevel = ControlLevels.Essential;
                 emailModel.Validate = validateTextBox(txtBoxEmail, ControlLevels.Essential, false);
             }
+            UpdateEmailHint(true);
             validateControls();
         }
 
@@ -522,6 +537,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 emailModel.Validate = true;
                 normalControl(txtBoxEmail);
             }
+            UpdateEmailHint(false);
             validateControls();
         }
         #endregion
@@ -787,5 +803,10 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         }
 
         #endregion
+
+        private void chkResponsibleAuthor_Checked_1()
+        {
+
+        }
     }
 }
