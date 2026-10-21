@@ -582,6 +582,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Templates\Journals\ArticleTemplate-AIT.docx" />
     <EmbeddedResource Include="CustomControls\CustomMessageBox\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -771,6 +772,7 @@
       <DependentUpon>InsertQuranControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Templates\DefenseAnnouncementsAccess.cs" />
+    <Compile Include="Templates\JournalTemplateMap.cs" />
     <Compile Include="Templates\TemplateAccess.cs" />
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -912,6 +914,12 @@
     <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\Proposal\Proposal_MSc.docx" />
     <EmbeddedResource Include="Templates\IslamicAzadUniversityYazd\Proposal\Proposal_PhD.docx" />
     <EmbeddedResource Include="Templates\MainTemplate.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-Ebtekar.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-IJAPAS.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-IMR.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-JOSTARNAMEH.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-JRORS.docx" />
+    <None Include="Templates\Journals\ArticleTemplate-TCAT.docx" />
     <None Include="Templates\Parsa\10_TableOfContents.docx" />
     <None Include="Templates\Parsa\11_TableOfFigures.docx" />
     <None Include="Templates\Parsa\12_TableOfTables.docx" />

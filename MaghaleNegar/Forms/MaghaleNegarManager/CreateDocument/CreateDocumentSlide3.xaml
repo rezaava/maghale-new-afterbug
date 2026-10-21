@@ -284,6 +284,12 @@
                                         Header="ایمیل" 
                                         Width="2*" />
 
+
+                                <DataGridTextColumn
+                                    Binding="{Binding Orcid}"
+                                    Header="ORCID"
+                                    Width="2*" />
+
                                 <!-- ستون نویسنده مسئول -->
                                 <DataGridCheckBoxColumn 
                                         Binding="{Binding IsResponsible}" 

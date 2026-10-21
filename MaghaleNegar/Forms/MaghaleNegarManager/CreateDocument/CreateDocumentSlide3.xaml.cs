@@ -6,6 +6,7 @@ using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -18,6 +19,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         public string Name { get; set; }
         public string NameEn { get; set; }
         public string Email { get; set; }
+        public string Orcid { get; set; }
         public bool IsResponsible { get; set; }
     }
 
@@ -93,6 +95,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             // تنظیم اولیه ایمیل
             txtBoxEmail.IsEnabled = true;
             txtBoxEmail.Text = "";
+            txtBoxOrcid.Text = "";
 
             // رویدادهای CheckBox
             chkResponsibleAuthor.Checked += ChkResponsibleAuthor_Checked;
@@ -164,6 +167,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 string authorName = txtBoxAreaOfStudy.Text.Trim();
                 string authorNameEn = txtBoxAreaOfStudyEn.Text.Trim();
                 string email = txtBoxEmail.Text.Trim();
+                string orcid = txtBoxOrcid.Text.Trim();
                 bool isResponsible = chkResponsibleAuthor.IsChecked ?? false;
 
                 // بررسی نام نویسنده
@@ -191,6 +195,19 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 }
 
                 // ✅ اگر در حالت ویرایش هستیم
+
+                if (!string.IsNullOrEmpty(orcid))
+                {
+                    if (!TryNormalizeOrcid(orcid, out orcid))
+                    {
+                        MessageBox.Show("شناسه ارکید معتبر نیست. قالب صحیح: 0000-0000-0000-0000",
+                            "خطا", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        txtBoxOrcid.Focus();
+                        return;
+                    }
+                    txtBoxOrcid.Text = orcid;
+                }
+
                 if (isEditingMode && editingAuthor != null)
                 {
                     // بررسی: اگر ایمیل وارد شده و قبلاً در لیست وجود دارد (به جز خود نویسنده در حال ویرایش)
@@ -204,6 +221,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     // به‌روزرسانی نویسنده
                     editingAuthor.Name = authorName;
                     editingAuthor.NameEn = authorNameEn;
+                    editingAuthor.Orcid = orcid;
                     editingAuthor.Email = email;
                     editingAuthor.IsResponsible = isResponsible;
 
@@ -225,6 +243,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     txtBoxAreaOfStudyEn.Text = "";
                     txtBoxEmail.Text = "";
                     txtBoxEmail.IsEnabled = true;
+                    txtBoxOrcid.Text = "";
                     chkResponsibleAuthor.IsChecked = false;
 
                     // بازگشت به حالت عادی
@@ -267,6 +286,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     Name = authorName,
                     NameEn = authorNameEn,
                     Email = email,
+                    Orcid = orcid,
                     IsResponsible = isResponsible
                 };
 
@@ -278,6 +298,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
                 txtBoxEmail.IsEnabled = true;
+                txtBoxOrcid.Text = "";
                 chkResponsibleAuthor.IsChecked = false;
 
                 // پاک کردن خطاها
@@ -328,6 +349,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     Name = author.Name,
                     NameEn = author.NameEn,
                     Email = author.Email,
+                    //Orcid = author.orcid ?? "",
                     IsResponsible = author.IsResponsible
                 };
 
@@ -434,6 +456,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
                 txtBoxEmail.IsEnabled = true;
+                txtBoxOrcid.Text = "";
                 chkResponsibleAuthor.IsChecked = false;
 
                 // پاک کردن خطاها
@@ -753,6 +776,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudyEn.Text = "";
                 txtBoxEmail.Text = "";
                 txtBoxEmail.IsEnabled = true;
+                txtBoxOrcid.Text = "";
                 chkResponsibleAuthor.IsChecked = false;
             });
             #endregion
@@ -804,6 +828,26 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
         #endregion
 
+
+        private static bool TryNormalizeOrcid(string input, out string normalized)
+        {
+            normalized = null;
+            string v = (input ?? "").Trim();
+
+            // اگر کاربر آدرس کامل orcid.org را چسباند، قسمت آدرس را حذف کن
+            v = Regex.Replace(v, @"^(https?://)?(www\.)?orcid\.org/", "", RegexOptions.IgnoreCase);
+
+            // خط تیره و فاصله را بردار و حروف را بزرگ کن (x -> X)
+            v = v.Replace("-", "").Replace(" ", "").ToUpperInvariant();
+
+            // باید 15 رقم و بعد یک رقم یا X باشد
+            if (!Regex.IsMatch(v, @"^\d{15}[\dX]$"))
+                return false;
+
+            // به قالب استاندارد 4-4-4-4 برگردان
+            normalized = $"{v.Substring(0, 4)}-{v.Substring(4, 4)}-{v.Substring(8, 4)}-{v.Substring(12, 4)}";
+            return true;
+        }
         private void chkResponsibleAuthor_Checked_1()
         {
 

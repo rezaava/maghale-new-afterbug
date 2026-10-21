@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
 using MaghaleNegar.Constants;
 using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.View;
+using MaghaleNegar.Templates;
 using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
@@ -194,7 +195,12 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 var wordApp = Globals.ThisAddIn.Application;
 
                 // ====== 1. گرفتن تمپلیت ======
-                string resourceName = "MaghaleNegar.Templates.MainTemplate.docx";
+                string templateFileName = JournalTemplateMap.GetFileName(_journalName);
+                if (templateFileName == null)
+                {
+                    throw new Exception("برای این نشریه هنوز قالبی تعریف نشده است.");
+                }
+                string resourceName = "MaghaleNegar.Templates.Journals." + templateFileName;
                 Assembly assembly = Assembly.GetExecutingAssembly();
 
                 using (System.IO.Stream stream = assembly.GetManifestResourceStream(resourceName))
@@ -209,7 +215,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                         "Microsoft", "Templates", "MaghaleNegarTemplates");
                     System.IO.Directory.CreateDirectory(templatesPath);
-                    string templatePath = System.IO.Path.Combine(templatesPath, "MainTemplate.docx");
+                    string templatePath = System.IO.Path.Combine(templatesPath, templateFileName);
 
                     using (System.IO.FileStream fileStream = new System.IO.FileStream(templatePath, System.IO.FileMode.Create, System.IO.FileAccess.Write))
                     {
