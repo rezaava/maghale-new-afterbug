@@ -336,23 +336,24 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         {
             try
             {
-                GetAuthorStore().Save(new AuthorRecord
-                {
-                    AuthorName = authorName,
-                    AuthorNameEn = authorNameEn,
-                    UniversityType = selectedUniversityType,
-                    AcademicDegreeFa = txtAcademicDegreeFa.Text.Trim(),
-                    AcademicDegreeEn = txtAcademicDegreeEn.Text.Trim(),
-                    GroupFa = txtGroupFa.Text.Trim(),
-                    GroupEn = txtGroupEn.Text.Trim(),
-                    FacultyFa = txtFacultyFa.Text.Trim(),
-                    FacultyEn = txtFacultyEn.Text.Trim(),
-                    UniversityFa = txtUniversityFa.Text.Trim(),
-                    UniversityEn = txtUniversityEn.Text.Trim(),
-                    CityFa = txtCityFa.Text.Trim(),
-                    CityEn = txtCityEn.Text.Trim()
-                });
+                var store = GetAuthorStore();
+                var rec = store.FindByName(authorName) ?? new AuthorRecord();
 
+                rec.AuthorName = authorName;
+                rec.AuthorNameEn = authorNameEn;
+                rec.UniversityType = selectedUniversityType;
+                rec.AcademicDegreeFa = txtAcademicDegreeFa.Text.Trim();
+                rec.AcademicDegreeEn = txtAcademicDegreeEn.Text.Trim();
+                rec.GroupFa = txtGroupFa.Text.Trim();
+                rec.GroupEn = txtGroupEn.Text.Trim();
+                rec.FacultyFa = txtFacultyFa.Text.Trim();
+                rec.FacultyEn = txtFacultyEn.Text.Trim();
+                rec.UniversityFa = txtUniversityFa.Text.Trim();
+                rec.UniversityEn = txtUniversityEn.Text.Trim();
+                rec.CityFa = txtCityFa.Text.Trim();
+                rec.CityEn = txtCityEn.Text.Trim();
+
+                store.Save(rec);
             }
             catch(Exception ex)
             {
@@ -375,8 +376,9 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         ClearAffilitionFields();
                         affiliationAutoFilled = false;
                     }
+
+                    return;
                 }
-                ;
 
                 bool azad = rec.UniversityType == "Azad";
                 bool dolati = rec.UniversityType == "Dolati";
@@ -409,15 +411,6 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         }
 
         #endregion
-
-        private void CmbNameList_SelectedChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (!isEditingListItem)
-                TryAutoFillFromStore();
-
-            ValidateControls();
-        }
-
 
         #region لیست اطلاعات
 

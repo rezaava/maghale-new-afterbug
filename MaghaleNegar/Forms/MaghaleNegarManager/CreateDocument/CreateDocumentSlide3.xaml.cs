@@ -1,4 +1,8 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
+﻿using MaghaleNegar.Models;
+using MaghaleNegar.Services;
+using System.Windows.Controls.Primitives;
+using System.Windows.Media;
+using DocumentFormat.OpenXml.Bibliography;
 using MaghaleNegar.Constants;
 using MaghaleNegar.Constants.ComboBoxData;
 using MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument.Models;
@@ -106,7 +110,122 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
             // تنظیم اولیه وضعیت دکمه‌ها
             UpdateButtonsState();
+            InitAuthorSuggestions();
         }
+
+        #region پیشنهاد نویسندگان ذخیره‌شده
+
+        private Popup suggestPopup;
+        private ListBox suggestList;
+        private Border suggestBorder;
+        private bool suppressSuggest = false;
+
+        private void InitAuthorSuggestions()
+        {
+            suggestList = new ListBox
+            {
+                MaxHeight = 200,
+                FlowDirection = FlowDirection.RightToLeft,
+                FontFamily = txtBoxAreaOfStudy.FontFamily,
+                DisplayMemberPath = "AuthorName",
+                BorderThickness = new Thickness(0)
+            };
+            suggestList.SelectionChanged += SuggestList_SelectionChanged;
+
+            suggestBorder = new Border
+            {
+                Background = Brushes.White,
+                BorderBrush = Brushes.Gray,
+                BorderThickness = new Thickness(1),
+                Child = suggestList
+            };
+
+            suggestPopup = new Popup
+            {
+                PlacementTarget = txtBoxAreaOfStudy,
+                Placement = PlacementMode.Bottom,
+                StaysOpen = false,
+                Child = suggestBorder
+            };
+
+            txtBoxAreaOfStudy.TextChanged += SuggestTextChanged;
+            txtBoxAreaOfStudy.PreviewKeyDown += (s, e) =>
+            {
+                if (e.Key == Key.Escape) suggestPopup.IsOpen = false;
+            };
+        }
+
+        private void SuggestTextChanged(object sender, TextChangedEventArgs e)
+        {
+            // فقط وقتی کاربر خودش تایپ می‌کند؛ نه وقتی برنامه فیلد را پر یا خالی می‌کند
+            if (suppressSuggest || !txtBoxAreaOfStudy.IsKeyboardFocused) return;
+
+            string q = LocalAuthorStore.Normalize(txtBoxAreaOfStudy.Text);
+            if (q.Length < 2)
+            {
+                suggestPopup.IsOpen = false;
+                return;
+            }
+
+            try
+            {
+                var matches = new LocalAuthorStore(Properties.Settings.Default.Mobile)
+                    .GetAll()
+                    .Where(a => LocalAuthorStore.Normalize(a.AuthorName).Contains(q))
+                    .Take(6)
+                    .ToList();
+
+                suggestList.ItemsSource = matches;
+                suggestBorder.Width = txtBoxAreaOfStudy.ActualWidth;
+                suggestPopup.IsOpen = matches.Count > 0;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"خطا در پیشنهاد نویسنده: {ex.Message}");
+            }
+        }
+
+        private void SuggestList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var rec = suggestList.SelectedItem as AuthorRecord;
+            if (rec == null) return;
+
+            suppressSuggest = true;
+            try
+            {
+                txtBoxAreaOfStudy.Text = rec.AuthorName;
+                txtBoxAreaOfStudyEn.Text = rec.AuthorNameEn;
+                txtBoxEmail.Text = rec.Email ?? "";
+                txtBoxOrcid.Text = rec.Orcid ?? "";
+            }
+            finally
+            {
+                suppressSuggest = false;
+            }
+
+            suggestPopup.IsOpen = false;
+            suggestList.SelectedItem = null;
+        }
+
+        private void SaveAuthorIdentityToStore(string name, string nameEn, string email, string orcid)
+        {
+            try
+            {
+                var store = new LocalAuthorStore(Properties.Settings.Default.Mobile);
+                var rec = store.FindByName(name) ?? new AuthorRecord();
+                rec.AuthorName = name;
+                rec.AuthorNameEn = nameEn;
+                rec.Email = email;
+                rec.Orcid = orcid;
+                store.Save(rec);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"خطا در ذخیره‌ی نویسنده: {ex.Message}");
+            }
+        }
+
+        #endregion
 
         #region دکمه‌ها
 
@@ -236,6 +355,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
                     // اضافه کردن نویسنده ویرایش‌شده به لیست
                     authorsList.Add(editingAuthor);
+                    SaveAuthorIdentityToStore(authorName, authorNameEn, email, orcid);
                     RefreshDataGrid();
 
                     // پاک کردن فیلدها
@@ -291,6 +411,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 };
 
                 authorsList.Add(newAuthor);
+                SaveAuthorIdentityToStore(authorName, authorNameEn, email, orcid);
                 RefreshDataGrid();
 
                 // پاک کردن فیلدها

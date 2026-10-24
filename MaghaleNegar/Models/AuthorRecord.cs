@@ -7,6 +7,10 @@ namespace MaghaleNegar.Models
         public string AuthorId { get; set; } = Guid.NewGuid().ToString();
 
         public string AuthorName { get; set; } = string.Empty;
+
+        public string Email { get; set; } = string.Empty;
+
+        public String Orcid { get; set; } = string.Empty;
         public string AuthorNameEn { get; set; } = string.Empty;
 
         public string UniversityType { get; set; } = string.Empty; // "Azad" یا "Dolati"

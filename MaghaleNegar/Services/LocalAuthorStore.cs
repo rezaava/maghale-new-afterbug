@@ -111,7 +111,7 @@ namespace MaghaleNegar.Services
                 File.Move(tmp, _filePath);
         }
 
-        private static string Normalize(string s)
+        public static string Normalize(string s)
         {
             if (string.IsNullOrWhiteSpace(s)) return string.Empty;
             return s.Replace('ي', 'ی').Replace('ك', 'ک').Replace("\u200c", " ")
