@@ -80,6 +80,8 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
         private void CmbNameList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (!isEditingListItem)
+                TryAutoFillFromStore();
             ValidateControls();
         }
 
@@ -295,6 +297,29 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         #endregion
 
         #region ذخیره محلی نویسندگان 
+
+        private bool affiliationAutoFilled = false;
+        private void ClearAffilitionFields()
+        {
+            chkAzad.IsChecked = false;
+            chkDolati.IsChecked = false;
+            selectedUniversityType = "";
+
+            txtAcademicDegreeFa.Text = "";
+            txtAcademicDegreeEn.Text = "";
+            txtGroupFa.Text = "";
+            txtGroupEn.Text = "";
+            txtFacultyFa.Text = "";
+            txtFacultyEn.Text = "";
+            txtUniversityFa.Text = "";
+            txtUniversityEn.Text = "";
+            txtCityFa.Text = "";
+            txtCityEn.Text = "";
+
+            chkConfirmAffiliation.IsChecked = false;
+            SetDefaultUniversityState();
+            UpdatePreview();
+        }
         private IAuthorStore GetAuthorStore()
         {
             return new LocalAuthorStore(Properties.Settings.Default.Mobile);
@@ -322,7 +347,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     GroupEn = txtGroupEn.Text.Trim(),
                     FacultyFa = txtFacultyFa.Text.Trim(),
                     FacultyEn = txtFacultyEn.Text.Trim(),
-                    UniversityFa = txtUniversityEn.Text.Trim(),
+                    UniversityFa = txtUniversityFa.Text.Trim(),
                     UniversityEn = txtUniversityEn.Text.Trim(),
                     CityFa = txtCityFa.Text.Trim(),
                     CityEn = txtCityEn.Text.Trim()
@@ -343,7 +368,15 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
                 string name = StripEmail(cmbNameList.SelectedItem.ToString());
                 AuthorRecord rec = GetAuthorStore().FindByName(name);
-                if (rec == null) return;
+                if (rec == null)
+                {
+                    if (affiliationAutoFilled)
+                    {
+                        ClearAffilitionFields();
+                        affiliationAutoFilled = false;
+                    }
+                }
+                ;
 
                 bool azad = rec.UniversityType == "Azad";
                 bool dolati = rec.UniversityType == "Dolati";
@@ -356,7 +389,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
 
                 txtAcademicDegreeFa.Text = rec.AcademicDegreeFa;
-                txtAcademicDegreeEn.Text = rec.AcademicDegreeFa;
+                txtAcademicDegreeEn.Text = rec.AcademicDegreeEn;
                 txtGroupFa.Text = rec.GroupFa;
                 txtGroupEn.Text = rec.GroupEn;
                 txtFacultyFa.Text = rec.FacultyFa;
@@ -366,6 +399,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtCityFa.Text = rec.CityFa;
                 txtCityEn.Text = rec.CityEn;
                 chkConfirmAffiliation.IsChecked = false;
+                affiliationAutoFilled = true;
                 UpdatePreview();
             }
             catch (Exception ex)
@@ -564,6 +598,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             txtUniversityEn.Text = "";
             txtCityFa.Text = "";
             txtCityEn.Text = "";
+            affiliationAutoFilled = false;
 
             chkConfirmAffiliation.IsChecked = false;
 
