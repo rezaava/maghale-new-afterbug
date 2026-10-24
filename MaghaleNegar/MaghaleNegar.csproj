@@ -471,6 +471,7 @@
     <Compile Include="Forms\MaghaleNegarManager\NetworkingManager\NetworkingManagerControl.xaml.cs">
       <DependentUpon>NetworkingManagerControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAuthorStore.cs" />
     <Compile Include="Interfaces\IChangeTransitionMaghaleNegarManager.cs" />
     <Compile Include="Interfaces\ICloseForm.cs" />
     <Compile Include="Interfaces\IStatusFormRequest.cs" />
@@ -490,6 +491,7 @@
     <Compile Include="Interfaces\IKeyboardShortcuts.cs" />
     <Compile Include="Interfaces\ITransitionCommand.cs" />
     <Compile Include="KeyboardHooking.cs" />
+    <Compile Include="Models\AuthorRecord.cs" />
     <Compile Include="Models\KeyboardRelationModel.cs" />
     <Compile Include="Models\RibbonControlModel.cs" />
     <Compile Include="Models\SearchReplaceModel.cs" />
@@ -509,6 +511,7 @@
     <Compile Include="Ribbon.cs">
       <XmlRibbon>true</XmlRibbon>
     </Compile>
+    <Compile Include="Services\LocalAuthorStore.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TaskPanes\CrossReference\CrossReferenceControl.xaml.cs">
       <DependentUpon>CrossReferenceControl.xaml</DependentUpon>

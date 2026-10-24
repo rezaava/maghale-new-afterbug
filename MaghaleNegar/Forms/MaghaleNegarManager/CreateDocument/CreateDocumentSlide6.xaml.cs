@@ -211,7 +211,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         throw new Exception($"فایل تمپلیت پیدا نشد!\n{string.Join("\n", allResources)}");
                     }
 
-                    string templatesPath = System.IO.Path.Combine(
+                    string templatesPath = System.IO.Path.Combine( 
                         Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                         "Microsoft", "Templates", "MaghaleNegarTemplates");
                     System.IO.Directory.CreateDirectory(templatesPath);

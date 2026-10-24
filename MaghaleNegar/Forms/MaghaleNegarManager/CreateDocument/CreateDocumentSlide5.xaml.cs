@@ -1,4 +1,7 @@
 ﻿using MaghaleNegar.Constants;
+using MaghaleNegar.Interfaces;
+using MaghaleNegar.Models;
+using MaghaleNegar.Services;
 using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
@@ -291,6 +294,97 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
         #endregion
 
+        #region ذخیره محلی نویسندگان 
+        private IAuthorStore GetAuthorStore()
+        {
+            return new LocalAuthorStore(Properties.Settings.Default.Mobile);
+        }
+
+        private static string StripEmail(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return "";
+            int start = name.IndexOf('(');
+            return (start != -1 ? name.Substring(0, start) : name).Trim();
+        }
+
+        private void SaveCurrentAuthorToStore(string authorName, string authorNameEn)
+        {
+            try
+            {
+                GetAuthorStore().Save(new AuthorRecord
+                {
+                    AuthorName = authorName,
+                    AuthorNameEn = authorNameEn,
+                    UniversityType = selectedUniversityType,
+                    AcademicDegreeFa = txtAcademicDegreeFa.Text.Trim(),
+                    AcademicDegreeEn = txtAcademicDegreeEn.Text.Trim(),
+                    GroupFa = txtGroupFa.Text.Trim(),
+                    GroupEn = txtGroupEn.Text.Trim(),
+                    FacultyFa = txtFacultyFa.Text.Trim(),
+                    FacultyEn = txtFacultyEn.Text.Trim(),
+                    UniversityFa = txtUniversityEn.Text.Trim(),
+                    UniversityEn = txtUniversityEn.Text.Trim(),
+                    CityFa = txtCityFa.Text.Trim(),
+                    CityEn = txtCityEn.Text.Trim()
+                });
+
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine($"خطا در ذخیره‌ی نویسنده: {ex.Message}");
+            }
+        }
+
+        private void TryAutoFillFromStore()
+        {
+            try
+            {
+                if (cmbNameList.SelectedItem == null) return;
+
+                string name = StripEmail(cmbNameList.SelectedItem.ToString());
+                AuthorRecord rec = GetAuthorStore().FindByName(name);
+                if (rec == null) return;
+
+                bool azad = rec.UniversityType == "Azad";
+                bool dolati = rec.UniversityType == "Dolati";
+                chkAzad.IsChecked = azad;
+                chkDolati.IsChecked = dolati;
+                selectedUniversityType = rec.UniversityType ?? "";
+                if (azad) SetAzadUniversityState();
+                else if (dolati) SetDolatiUniversityState();
+                else SetDefaultUniversityState();
+
+
+                txtAcademicDegreeFa.Text = rec.AcademicDegreeFa;
+                txtAcademicDegreeEn.Text = rec.AcademicDegreeFa;
+                txtGroupFa.Text = rec.GroupFa;
+                txtGroupEn.Text = rec.GroupEn;
+                txtFacultyFa.Text = rec.FacultyFa;
+                txtFacultyEn.Text = rec.FacultyEn;
+                txtUniversityFa.Text = rec.UniversityFa;
+                txtUniversityEn.Text = rec.UniversityEn;
+                txtCityFa.Text = rec.CityFa;
+                txtCityEn.Text = rec.CityEn;
+                chkConfirmAffiliation.IsChecked = false;
+                UpdatePreview();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"خطا در پر کردن خودکار: {ex.Message}");
+            }
+        }
+
+        #endregion
+
+        private void CmbNameList_SelectedChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!isEditingListItem)
+                TryAutoFillFromStore();
+
+            ValidateControls();
+        }
+
+
         #region لیست اطلاعات
 
         private void btnAddToList_Click(object sender, RoutedEventArgs e)
@@ -366,6 +460,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     editingListItem.AuthorNameEn = authorNameEn;  // ← انگلیسی
                     editingListItem.AffiliationFa = affiliationFa;
                     editingListItem.AffiliationEn = affiliationEn;
+                    SaveCurrentAuthorToStore(authorName, authorNameEn);
 
                     // اضافه کردن به لیست
                     infoList.Add(editingListItem);
@@ -404,6 +499,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 };
 
                 infoList.Add(newItem);
+                SaveCurrentAuthorToStore(authorName, authorNameEn);
                 RefreshDataGrid();
                 ClearFields();
                 ValidateControls();
