@@ -1046,7 +1046,7 @@ namespace MaghaleNegar
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
+                    PersianMessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
                 }
             }
             else if (selectedIndex == 1)
@@ -1057,7 +1057,7 @@ namespace MaghaleNegar
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
+                    PersianMessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
                 }
             }
             else if (selectedIndex == 2)
@@ -1076,7 +1076,7 @@ namespace MaghaleNegar
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
+                    PersianMessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
                 }
             }
             else if (selectedIndex == 1)
@@ -1087,7 +1087,7 @@ namespace MaghaleNegar
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
+                    PersianMessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
                 }
             }
             else if (selectedIndex == 2)
@@ -1098,7 +1098,7 @@ namespace MaghaleNegar
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
+                    PersianMessageBox.Show($"خطا در باز کردن وبسایت: {ex.Message}");
                 }
             }
         }

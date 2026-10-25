@@ -162,7 +162,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             //    {
             //        if (resourceStream == null)
             //        {
-            //            System.Windows.Forms.MessageBox.Show("فایل قالب پیدا نشد.\nنام مورد جستجو: " + resourceName +
+            //            PersianMessageBox.Show("فایل قالب پیدا نشد.\nنام مورد جستجو: " + resourceName +
             //                                              "\nموجودیت منابع:\n" + string.Join("", resourceNames));
             //            return;
             //        }
@@ -193,12 +193,12 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
             //        }
             //        CloseForm?.Invoke();
-            //        System.Windows.Forms.MessageBox.Show("سند با موفقیت ساخته شد.");
+            //        PersianMessageBox.Show("سند با موفقیت ساخته شد.");
             //    }
             //}
             //catch (Exception ex)
             //{
-            //    System.Windows.Forms.MessageBox.Show("خطا در ایجاد سند جدید:\n" + ex.ToString());
+            //    PersianMessageBox.Show("خطا در ایجاد سند جدید:\n" + ex.ToString());
             //}
         }
         private void CreateDocumentFromTemplate()

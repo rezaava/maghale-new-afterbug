@@ -484,3 +484,5 @@ E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\MaghaleNegar.cspro
 E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\MaghaleN.CECAE18E.Up2Date
 E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\MaghaleNegar.dll
 E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\MaghaleNegar.pdb
+E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\CustomControls\MessageDialogWindow.baml
+E:\maghale-negar-app\maghale-negar-app\MaghaleNegar\obj\Debug\CustomControls\MessageDialogWindow.g.cs

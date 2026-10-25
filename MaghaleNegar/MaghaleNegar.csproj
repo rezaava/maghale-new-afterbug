@@ -267,6 +267,10 @@
     <Compile Include="CustomControls\DialogBoxControl.xaml.cs">
       <DependentUpon>DialogBoxControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\MessageDialogWindow.xaml.cs">
+      <DependentUpon>MessageDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PersianMessageBox.cs" />
     <Compile Include="CustomControls\ShowMessageControl.xaml.cs">
       <DependentUpon>ShowMessageControl.xaml</DependentUpon>
     </Compile>
@@ -1075,6 +1079,10 @@
     <Page Include="CustomControls\DialogBoxControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\MessageDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\ShowMessageControl.xaml">
       <Generator>MSBuild:Compile</Generator>

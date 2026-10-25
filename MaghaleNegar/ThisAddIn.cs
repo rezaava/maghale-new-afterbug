@@ -1071,7 +1071,7 @@ namespace MaghaleNegar
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(
+                PersianMessageBox.Show(
                     "خطا در نمایش درباره ما:\n" + ex.Message,
                     "خطا",
                     System.Windows.Forms.MessageBoxButtons.OK,
@@ -1401,53 +1401,50 @@ namespace MaghaleNegar
 
         }
 
-        #region Set Style
-        public void setNormalStyle()
-        {
+		#region Set Style
+		public void setNormalStyle()
+		{
+			try
+			{
+				Selection selection = Globals.ThisAddIn.Application.Selection;
+				if (selection == null || selection.Range == null)
+				{
+					DedicatedFunctions.ShowMessage("متنی برای قالب‌بندی انتخاب نشده است.");
+					return;
+				}
 
-            try
-            {
-                Selection selection = Globals.ThisAddIn.Application.Selection;
-                if (selection == null || selection.Range == null)
-                {
-                    DedicatedFunctions.ShowMessage("متنی برای قالب‌بندی انتخاب نشده است.");
-                    return;
-                }
+				Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 
-                Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+				// قالب متن مقاله: BodyTextNegar (در قالب‌های قدیمی‌تر: BodyNegar)
+				string bodyStyleName = null;
+				foreach (string candidate in new[] { StyleNames.BodyTextNegar, StyleNames.BodyNegar })
+				{
+					try { Style style = doc.Styles[candidate]; bodyStyleName = candidate; break; } catch { }
+				}
 
-                bool styleExists = false;
-                try { Style style = doc.Styles[StyleNames.BodyNegar]; styleExists = true; } catch { }
+				if (bodyStyleName == null)
+				{
+					DedicatedFunctions.ShowMessage($"استایل '{StyleNames.BodyTextNegar}' در این سند وجود ندارد.");
+					return;
+				}
 
-                if (!styleExists)
-                {
-                    DedicatedFunctions.ShowMessage($"استایل '{StyleNames.AbstractBodyNegar}' در این سند وجود ندارد.");
-                    return;
-                }
+				Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی متن مقاله");
+				try
+				{
+					DedicatedFunctions.textFormating(selection, bodyStyleName);
+				}
+				finally
+				{
+					Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+				}
+			}
+			catch (Exception ex)
+			{
+				DedicatedFunctions.ShowErrorMessage($"خطا در اعمال قالب‌بندی متن مقاله:\n{ex.Message}");
+			}
+		}
 
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی چکیده");
-
-                // ====== اعمال استایل ======
-                DedicatedFunctions.textFormating(selection, StyleNames.AbstractBodyNegar);
-
-                // ====== تنظیم فونت سفارشی ======
-                // فونت فارسی
-                selection.Font.NameBi = "B zar"; // یا هر فونت دیگه‌ای
-                selection.Font.SizeBi = 12; // اندازه فونت فارسی
-
-
-
-
-
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
-            catch (Exception ex)
-            {
-                DedicatedFunctions.ShowErrorMessage($"خطا در اعمال قالب‌بندی چکیده:\n{ex.Message}");
-            }
-        }
-
-        public void setAbstractStyle()
+		public void setAbstractStyle()
         {
             try
             {
@@ -3326,7 +3323,7 @@ namespace MaghaleNegar
                     catch (Exception ex)
                     {
                         loadingForm?.closeForm(successfull: false);
-                        System.Windows.Forms.MessageBox.Show("خطا در تولید خروجی LaTeX:\n" + ex.Message);
+                        PersianMessageBox.Show("خطا در تولید خروجی LaTeX:\n" + ex.Message);
                     }
                 });
 

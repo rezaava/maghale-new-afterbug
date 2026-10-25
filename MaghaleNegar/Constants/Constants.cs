@@ -450,6 +450,7 @@ namespace MaghaleNegar.Constants
         internal const string AbstractBodyNegar = "AbstractBodyNegar";
         internal const string TitleNegar = "TitleNegar";
         internal const string BodyNegar = "BodyNegar";
+        internal const string BodyTextNegar = "BodyTextNegar";
         internal const string TitleNegarAuthor = "TitleNegarAuthor";
         internal const string TitleNegar1 = "TitleNegar1";
 

@@ -121,7 +121,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.MessageBox.Show($"خطا در انتقال به تأیید نهایی: {ex.Message}",
+                    PersianMessageBox.Show($"خطا در انتقال به تأیید نهایی: {ex.Message}",
                         "خطا", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                 }
             };
@@ -247,7 +247,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.MessageBox.Show($"خطا در انتقال اطلاعات به اسلاید وابستگی علمی: {ex.Message}",
+                    PersianMessageBox.Show($"خطا در انتقال اطلاعات به اسلاید وابستگی علمی: {ex.Message}",
                         "خطا", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                 }
             }

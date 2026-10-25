@@ -4200,7 +4200,7 @@ namespace MaghaleNegar
             if (mobile != "")
                 errorMessage += "\nمیتوانید مورد را از طریق شماره موبایل " + mobile + " با ما در جریان بگذارید";
 
-            MessageBox.Show(errorMessage, StringConstant.NameOfProject, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            PersianMessageBox.Show(errorMessage, StringConstant.NameOfProject, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
         internal static DialogResult ShowMessage(string message,
             MessageBoxButtons messageBoxButtons = MessageBoxButtons.OK,
@@ -4208,7 +4208,7 @@ namespace MaghaleNegar
             MessageBoxDefaultButton messageBoxDefaultButton = MessageBoxDefaultButton.Button2,
             string caption = StringConstant.NameOfProject)
         {
-            return MessageBox.Show(message, caption, messageBoxButtons, messageBoxIcon, messageBoxDefaultButton, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            return PersianMessageBox.Show(message, caption, messageBoxButtons, messageBoxIcon, messageBoxDefaultButton);
         }
         #endregion
 
