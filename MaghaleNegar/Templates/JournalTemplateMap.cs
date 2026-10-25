@@ -18,8 +18,19 @@ namespace MaghaleNegar.Templates
             { "The Journal of Radar and Optical Remote Sensing", "ArticleTemplate-JRORS.docx" },
             { "Artificial Intelligence Tools in Software and Data Engineering (AITSDE)", "ArticleTemplate-AIT.docx" },
         };
+        private static readonly HashSet<string> englishJournals = new HashSet<string>
+        {
+            "International Journal of Applied Arts Studies",
+            "The Journal of Radar and Optical Remote Sensing",
+            "Artificial Intelligence Tools in Software and Data Engineering (AITSDE)",
+        };
 
-            internal static string GetFileName(string journalName)
+        internal static bool IsEnglish(string journalName)
+        {
+            return journalName != null && englishJournals.Contains(journalName);
+        }
+
+        internal static string GetFileName(string journalName)
             {
                 if (journalName != null && map.TryGetValue(journalName, out string file))
                     return file;

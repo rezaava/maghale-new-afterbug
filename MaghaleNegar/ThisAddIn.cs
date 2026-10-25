@@ -1417,18 +1417,18 @@ namespace MaghaleNegar
                 Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 
                 bool styleExists = false;
-                try { Style style = doc.Styles[StyleNames.AbstractNegar]; styleExists = true; } catch { }
+                try { Style style = doc.Styles[StyleNames.BodyNegar]; styleExists = true; } catch { }
 
                 if (!styleExists)
                 {
-                    DedicatedFunctions.ShowMessage($"استایل '{StyleNames.AbstractNegar}' در این سند وجود ندارد.");
+                    DedicatedFunctions.ShowMessage($"استایل '{StyleNames.AbstractBodyNegar}' در این سند وجود ندارد.");
                     return;
                 }
 
                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی چکیده");
 
                 // ====== اعمال استایل ======
-                DedicatedFunctions.textFormating(selection, StyleNames.AbstractNegar);
+                DedicatedFunctions.textFormating(selection, StyleNames.AbstractBodyNegar);
 
                 // ====== تنظیم فونت سفارشی ======
                 // فونت فارسی
@@ -1461,18 +1461,18 @@ namespace MaghaleNegar
                 Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 
                 bool styleExists = false;
-                try { Style style = doc.Styles[StyleNames.AbstractNegar]; styleExists = true; } catch { }
+                try { Style style = doc.Styles[StyleNames.AbstractBodyNegar]; styleExists = true; } catch { }
 
                 if (!styleExists)
                 {
-                    DedicatedFunctions.ShowMessage($"استایل '{StyleNames.AbstractNegar}' در این سند وجود ندارد.");
+                    DedicatedFunctions.ShowMessage($"استایل '{StyleNames.AbstractBodyNegar}' در این سند وجود ندارد.");
                     return;
                 }
 
                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی چکیده");
 
                 // ====== اعمال استایل ======
-                DedicatedFunctions.textFormating(selection, StyleNames.AbstractNegar);
+                DedicatedFunctions.textFormating(selection, StyleNames.AbstractBodyNegar);
 
                 // ====== تنظیم فونت سفارشی ======
                 // فونت فارسی
@@ -1498,7 +1498,7 @@ namespace MaghaleNegar
             if (index == 1)
             {
                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح یک");
-                DedicatedFunctions.textFormating(selection, StyleNames.styleHeading1);
+                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar1);
                 Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
             }
             else if (index == 2)

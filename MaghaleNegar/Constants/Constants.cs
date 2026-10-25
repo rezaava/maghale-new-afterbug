@@ -447,10 +447,11 @@ namespace MaghaleNegar.Constants
     {
         internal const string CustomSectionBreakStyle = "Protected Section Break";
 
-
-       
-
-        internal const string AbstractNegar = "AbstractNegar";
+        internal const string AbstractBodyNegar = "AbstractBodyNegar";
+        internal const string TitleNegar = "TitleNegar";
+        internal const string BodyNegar = "BodyNegar";
+        internal const string TitleNegarAuthor = "TitleNegarAuthor";
+        internal const string TitleNegar1 = "TitleNegar1";
 
         internal const WdBuiltinStyle BodyText = WdBuiltinStyle.wdStyleBodyText;
         internal const WdBuiltinStyle styleNormal = WdBuiltinStyle.wdStyleNormal;

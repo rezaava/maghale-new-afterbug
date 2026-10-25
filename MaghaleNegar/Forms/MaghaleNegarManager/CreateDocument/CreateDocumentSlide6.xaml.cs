@@ -420,16 +420,40 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         {
             try
             {
-                // ====== عنوان مقاله ======
-                SetContentControlText(doc, "TitleFa", _titleFa);
-                SetContentControlText(doc, "TitleEn", _titleEn);
+                bool isEnglishJournal = JournalTemplateMap.IsEnglish(_journalName);
+
+                // ====== عنوان ======
+                // اولویت با Content Control (اگر قالب داشت)
+                bool fa = SetContentControlText(doc, "TitleFa", _titleFa);
+                bool en = SetContentControlText(doc, "TitleEn", _titleEn);
                 SetContentControlText(doc, "JournalName", _journalName);
 
-                // ====== نویسندگان فارسی + Footnote ======
-                InsertAuthorsWithFootnotes(doc, "AuthorNamesFa", false);
+                // قالب‌های جدید Content Control ندارند؛ عنوان از روی استایل پیدا می‌شود
+                if (!fa && !en)
+                {
+                    string title = isEnglishJournal ? _titleEn : _titleFa;
+                    if (!string.IsNullOrWhiteSpace(title))
+                    {
+                        Range titleRange = GetFirstParagraphContentRangeByStyle(doc, StyleNames.TitleNegar);
+                        if (titleRange != null)
+                            titleRange.Text = title;
+                    }
+                }
 
-                // ====== نویسندگان انگلیسی ======
-                InsertAuthorsWithFootnotes(doc, "AuthorNamesEn", true);
+                // ====== نویسندگان ======
+                bool hasAuthorBookmarks = doc.Bookmarks.Exists("AuthorNamesFa")
+                                       || doc.Bookmarks.Exists("AuthorNamesEn");
+                if (hasAuthorBookmarks)
+                {
+                    InsertAuthorsWithFootnotes(doc, "AuthorNamesFa", false);
+                    InsertAuthorsWithFootnotes(doc, "AuthorNamesEn", true);
+                }
+                else
+                {
+                    Range authorsRange = GetFirstParagraphContentRangeByStyle(doc, StyleNames.TitleNegarAuthor);
+                    if (authorsRange != null)
+                        InsertAuthorsWithFootnotes(doc, authorsRange, isEnglishJournal);
+                }
             }
             catch (Exception ex)
             {
@@ -441,7 +465,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     MessageBoxImage.Error);
             }
         }
-        
+
         private void SetBookmarkText(Document doc, string bookmarkName, string text)
         {
             try
@@ -456,29 +480,24 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 //Debug.WriteLine($"خطا در SetBookmarkText برای {bookmarkName}: {ex.Message}");
             }
         }
-        private void InsertAuthorsWithFootnotes(
-                          Document doc,
-                          string bookmarkName,
-                          bool isEnglish)
+
+        private void InsertAuthorsWithFootnotes(Document doc, string bookmarkName, bool isEnglish)
+        {
+            if (!doc.Bookmarks.Exists(bookmarkName)) return;
+            InsertAuthorsWithFootnotes(doc, doc.Bookmarks[bookmarkName].Range, isEnglish);
+        }
+        private void InsertAuthorsWithFootnotes(Document doc, Range bookmarkRange, bool isEnglish)
         {
             try
             {
                 if (infoList == null || infoList.Count == 0)
                     return;
 
-                if (!doc.Bookmarks.Exists(bookmarkName))
-                {
-                    Debug.WriteLine($"Bookmark پیدا نشد: {bookmarkName}");
-                    return;
-                }
 
                 // ==========================================
                 // تنظیم شماره‌گذاری پانویس‌ها (شروع از ۱ در هر صفحه)
                 // ==========================================
                 doc.Footnotes.NumberingRule = WdNumberingRule.wdRestartPage;
-
-                // محدوده Bookmark
-                Range bookmarkRange = doc.Bookmarks[bookmarkName].Range;
 
                 // موقعیت شروع Bookmark
                 int start = bookmarkRange.Start;
@@ -578,11 +597,27 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             }
             catch (Exception ex)
             {
+                string bookmarkName = "authors";
                 Debug.WriteLine($"خطا در InsertAuthorsWithFootnotes ({bookmarkName}): {ex}");
                 throw;
             }
         }
-        private void SetContentControlText(Document doc, string tag, string text)
+
+        private Range GetFirstParagraphContentRangeByStyle(Document doc, string styleName)
+        {
+            foreach (Microsoft.Office.Interop.Word.Paragraph para in doc.Paragraphs)
+            {
+                var st = para.get_Style() as Microsoft.Office.Interop.Word.Style;
+                if (st != null && st.NameLocal == styleName)
+                {
+                    Range r = para.Range;
+                    r.MoveEnd(WdUnits.wdCharacter, -1);   // علامت پایان پاراگراف را کنار بگذار
+                    return r;
+                }
+            }
+            return null;
+        }
+        private bool SetContentControlText(Document doc, string tag, string text)
         {
             try
             {
@@ -591,14 +626,17 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     if (cc.Tag == tag)
                     {
                         cc.Range.Text = text;
-                        return;
+                        return true;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"خطا در SetContentControlText برای {tag}: {ex.Message}");
+                return false;
             }
+
+            return false;
         }
 
         private string GetFileNameFromTitle()
