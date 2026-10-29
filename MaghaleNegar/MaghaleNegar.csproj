@@ -515,6 +515,7 @@
     <Compile Include="Ribbon.cs">
       <XmlRibbon>true</XmlRibbon>
     </Compile>
+    <Compile Include="Services\AuthorSyncService.cs" />
     <Compile Include="Services\LocalAuthorStore.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TaskPanes\CrossReference\CrossReferenceControl.xaml.cs">

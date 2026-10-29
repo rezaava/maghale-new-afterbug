@@ -72,6 +72,61 @@ namespace MaghaleNegar.Services
             }
         }
 
+        // ===== همگام‌سازی با سرور =====
+
+        // آیا تغییری هست که هنوز به سرور نرفته؟
+        public bool HasUnsynced()
+        {
+            lock (_lock) { return Load().Any(a => !a.IsSynced); }
+        }
+
+        // بعد از ارسال موفق به سرور صدا زده می‌شود
+        public void MarkAllSynced()
+        {
+            lock (_lock)
+            {
+                var all = Load();
+                if (all.Count == 0) return;
+                foreach (var a in all) a.IsSynced = true;
+                Write(all);
+            }
+        }
+
+        // نتیجه‌ی دریافت از سرور را در همان فایل محلی ذخیره می‌کند.
+        // - اگر تغییر ارسال‌نشده نداریم: سرور مرجع است و فایل جایگزین می‌شود.
+        // - اگر تغییر ارسال‌نشده داریم: ادغام؛ نسخه‌ی محلیِ ارسال‌نشده هیچ‌وقت پاک نمی‌شود.
+        public void MergeFromServer(IList<AuthorRecord> server)
+        {
+            if (server == null) return;
+            var valid = server.Where(s => s != null && Normalize(s.AuthorName).Length > 0).ToList();
+            if (valid.Count == 0) return; // پاسخ خالی هرگز فایل محلی را پاک نکند
+
+            lock (_lock)
+            {
+                var local = Load();
+
+                if (!local.Any(a => !a.IsSynced))
+                {
+                    foreach (var s in valid) s.IsSynced = true;
+                    Write(valid);
+                    return;
+                }
+
+                foreach (var s in valid)
+                {
+                    s.IsSynced = true;
+                    string key = Normalize(s.AuthorName);
+                    var mine = local.FirstOrDefault(a => Normalize(a.AuthorName) == key);
+
+                    if (mine == null)
+                        local.Add(s);
+                    else if (mine.IsSynced && s.UpdatedAt > mine.UpdatedAt)
+                        local[local.IndexOf(mine)] = s;
+                }
+                Write(local);
+            }
+        }
+
         public bool Delete(string authorId)
         {
             lock (_lock)

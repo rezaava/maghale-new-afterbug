@@ -1,13 +1,14 @@
-﻿using System;
+﻿using MaghaleNegar.Constants;
+using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.Utilities;
+using MaghaleNegar.Services;
+using MaterialDesignThemes.Wpf;
+using MaterialDesignThemes.Wpf.Transitions;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using MaterialDesignThemes.Wpf;
-using MaterialDesignThemes.Wpf.Transitions;
-using MaghaleNegar.Constants;
-using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.Utilities;
 
 namespace MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.ViewModel
 {
@@ -32,6 +33,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.ViewModel
             Properties.Settings.Default.UserToken = token;
             Properties.Settings.Default.Mobile = mobile;
             Properties.Settings.Default.Save();
+            _ = AuthorSyncService.DownloadAsync();
 
             if (Globals.ThisAddIn.Application.Documents.Count != 0 && StringConstant.AdministratorAccounts.Contains(Properties.Settings.Default.Mobile))
             {

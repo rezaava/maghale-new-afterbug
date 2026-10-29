@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|c:\\users\\moaba\\documents\\code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\services\\authorsyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\services\\authorsyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|c:\\users\\moaba\\documents\\code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\documentmanager\\viewmodel\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\documentmanager\\viewmodel\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|c:\\users\\moaba\\documents\\code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\thisaddin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\thisaddin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\services\\localauthorstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\services\\localauthorstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\ribbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\ribbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\models\\authorrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\models\\authorrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\properties\\resourceribbonicons.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -63,14 +79,6 @@
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\services\\localauthorstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\services\\localauthorstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\models\\authorrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\models\\authorrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -113,6 +121,19 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\ViewModel\\LoginVM.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\ViewModel\\LoginVM.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\ViewModel\\LoginVM.cs",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\ViewModel\\LoginVM.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAQwDMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T03:55:27.391Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
@@ -122,25 +143,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Ribbon.cs",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.cs",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.cs",
-              "RelativeToolTip": "MaghaleNegar\\Ribbon.cs",
-              "ViewState": "AgIAACgGAAAAAAAAAAAIwDUGAAAjAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthorSyncService.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\AuthorSyncService.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Services\\AuthorSyncService.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\AuthorSyncService.cs",
+              "RelativeToolTip": "MaghaleNegar\\Services\\AuthorSyncService.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAYwKUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T15:17:17.258Z"
+              "WhenOpened": "2026-10-29T03:52:09.006Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ThisAddIn.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\ThisAddIn.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\ThisAddIn.cs",
               "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\ThisAddIn.cs",
               "RelativeToolTip": "MaghaleNegar\\ThisAddIn.cs",
-              "ViewState": "AgIAANAFAAAAAAAAAAAuwOsFAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAEkCAAAAAAAAAAAMwF4CAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-24T15:11:33.886Z",
               "EditorCaption": ""
@@ -148,30 +170,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ResourceRibbonIcons.resx",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
-              "RelativeToolTip": "MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAawLQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-10-28T15:15:12.615Z"
+              "Title": "LocalAuthorStore.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\LocalAuthorStore.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Services\\LocalAuthorStore.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\LocalAuthorStore.cs",
+              "RelativeToolTip": "MaghaleNegar\\Services\\LocalAuthorStore.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowGAAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-23T14:28:39.255Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ribbon.xml",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.xml",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.xml",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.xml",
-              "RelativeToolTip": "MaghaleNegar\\Ribbon.xml",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAawGQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-10-28T15:17:38.075Z"
+              "DocumentIndex": 9,
+              "Title": "ResourceRibbonIcons.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
+              "RelativeToolTip": "MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAwwAkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T15:14:45.702Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
+              "Title": "DedicatedFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\DedicatedFunctions.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\DedicatedFunctions.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\DedicatedFunctions.cs",
+              "RelativeToolTip": "MaghaleNegar\\DedicatedFunctions.cs",
+              "ViewState": "AgIAAGgQAAAAAAAAAAAhwHMQAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T04:00:38.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Constants.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Constants\\Constants.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Constants\\Constants.cs",
@@ -184,30 +219,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ResourceRibbonIcons.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
-              "RelativeToolTip": "MaghaleNegar\\Properties\\ResourceRibbonIcons.Designer.cs",
-              "ViewState": "AgIAAP0AAAAAAAAAAAAwwAkBAAAAAAAAAAAAAA==",
+              "Title": "AuthorRecord.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\AuthorRecord.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Models\\AuthorRecord.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\AuthorRecord.cs",
+              "RelativeToolTip": "MaghaleNegar\\Models\\AuthorRecord.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T15:14:45.702Z"
+              "WhenOpened": "2026-10-23T14:22:32.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ribbon.cs",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.cs",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.cs",
+              "RelativeToolTip": "MaghaleNegar\\Ribbon.cs",
+              "ViewState": "AgIAADUGAAAAAAAAAAAAADUGAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T15:17:17.258Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DedicatedFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\DedicatedFunctions.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\DedicatedFunctions.cs",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\DedicatedFunctions.cs",
-              "RelativeToolTip": "MaghaleNegar\\DedicatedFunctions.cs",
-              "ViewState": "AgIAAGgQAAAAAAAAAAAhwHMQAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-25T04:00:38.241Z"
+              "Title": "Ribbon.xml",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.xml",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.xml",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Ribbon.xml",
+              "RelativeToolTip": "MaghaleNegar\\Ribbon.xml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAawGQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-10-28T15:17:38.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
+              "Title": "ResourceRibbonIcons.resx",
+              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
+              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
+              "RelativeToolTip": "MaghaleNegar\\Properties\\ResourceRibbonIcons.resx",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAawLQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-10-28T15:15:12.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "DialogBoxControl.xaml",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\CustomControls\\DialogBoxControl.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\CustomControls\\DialogBoxControl.xaml",
@@ -218,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "MessageDialogWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\CustomControls\\MessageDialogWindow.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\CustomControls\\MessageDialogWindow.xaml.cs",
@@ -230,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "MessageDialogWindow.xaml",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\CustomControls\\MessageDialogWindow.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\CustomControls\\MessageDialogWindow.xaml",
@@ -241,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "PersianMessageBox.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\CustomControls\\PersianMessageBox.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\CustomControls\\PersianMessageBox.cs",
@@ -253,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "JournalTemplateMap.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Templates\\JournalTemplateMap.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Templates\\JournalTemplateMap.cs",
@@ -265,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "CreateDocumentSlide5.xaml.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
@@ -277,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "CreateDocumentSlide6.xaml.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
@@ -289,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "CreateDocumentSlide3.xaml.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
@@ -301,31 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuthorRecord.cs",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\AuthorRecord.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Models\\AuthorRecord.cs",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\AuthorRecord.cs",
-              "RelativeToolTip": "MaghaleNegar\\Models\\AuthorRecord.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-23T14:22:32.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LocalAuthorStore.cs",
-              "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\LocalAuthorStore.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Services\\LocalAuthorStore.cs",
-              "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Services\\LocalAuthorStore.cs",
-              "RelativeToolTip": "MaghaleNegar\\Services\\LocalAuthorStore.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHEAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-23T14:28:39.255Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "CreateDocumentSlide5.xaml",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml",
@@ -336,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "IAuthorStore.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Interfaces\\IAuthorStore.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Interfaces\\IAuthorStore.cs",
@@ -348,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "DocumentManagerControl.xaml.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\DocumentManagerControl.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\DocumentManager\\DocumentManagerControl.xaml.cs",
@@ -360,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "UpdateResultModel.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\UpdateResultModel.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Models\\UpdateResultModel.cs",
@@ -372,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "SearchReplaceModel.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\SearchReplaceModel.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Models\\SearchReplaceModel.cs",
@@ -384,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "KeyboardRelationModel.cs",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Models\\KeyboardRelationModel.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Models\\KeyboardRelationModel.cs",
@@ -396,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "CreateDocumentControl.xaml",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentControl.xaml",
@@ -407,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "CreateDocumentSlide3.xaml",
               "DocumentMoniker": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",

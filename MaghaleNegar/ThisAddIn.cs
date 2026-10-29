@@ -11,10 +11,11 @@ using MaghaleNegar.Forms.CitationSettings;
 using MaghaleNegar.Forms.DocumentSettings;
 using MaghaleNegar.Forms.FootnoteSettings;
 using MaghaleNegar.Forms.FormatSettings;
+using MaghaleNegar.Forms.JournalSettings;
 using MaghaleNegar.Forms.MaghaleNegarManager;
 using MaghaleNegar.Forms.VirastarSettings;
-using MaghaleNegar.Forms.JournalSettings;
 using MaghaleNegar.Models;
+using MaghaleNegar.Services;
 using MaghaleNegar.TaskPanes.ChatBoxNetworking;
 using MaghaleNegar.TaskPanes.CrossReference;
 using MaghaleNegar.TaskPanes.DefenseAnnouncements;
@@ -30,6 +31,7 @@ using Microsoft.Office.Tools;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -39,9 +41,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using static MaghaleNegar.DedicatedFunctions;
-using System.Drawing;
 using System.Windows.Forms;
+using static MaghaleNegar.DedicatedFunctions;
 using Task = System.Threading.Tasks.Task;
 
 namespace MaghaleNegar
@@ -326,6 +327,7 @@ namespace MaghaleNegar
         {
             try
             {
+                _ = AuthorSyncService.DownloadAsync();
                 CsvDownloader.StartDownload();
 
                 //CSV download
@@ -602,6 +604,7 @@ namespace MaghaleNegar
         }
         private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
+            AuthorSyncService.UploadBlocking();
             CsvDownloader.ClearCache();
 
             if (Properties.Settings.Default.RememberUser == false)
