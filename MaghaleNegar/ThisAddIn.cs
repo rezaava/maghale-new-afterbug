@@ -170,6 +170,7 @@ namespace MaghaleNegar
         //document.Final
 
         #endregion
+
         //Microsoft.Office.Tools.Word.Document extendedDocument = Globals.Factory.GetVstoObject(doc);
         //var firstParagraph = extendedDocument.Controls.AddPlainTextContentControl(extendedDocument.Paragraphs[1].Range, "FirstParagraph");
         //var firstParagraph2 = extendedDocument.Controls.AddRichTextContentControl(extendedDocument.Paragraphs[2].Range, "FirstParagraph2");
@@ -209,7 +210,6 @@ namespace MaghaleNegar
 
         public bool setInitialSettings = false;
         #endregion
-
 
         internal bool SetKeyBindingStatus { get; set; } = false;
 
@@ -1501,27 +1501,27 @@ namespace MaghaleNegar
             else if (index == 2)
             {
                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح دو");
-                DedicatedFunctions.textFormating(selection, StyleNames.styleHeading2);
+                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar2);
                 Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
             }
             else if (index == 3)
             {
                 Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح سه");
-                DedicatedFunctions.textFormating(selection, StyleNames.styleHeading3);
+                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar3);
                 Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
             }
-            else if (index == 4)
-            {
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح چهار");
-                DedicatedFunctions.textFormating(selection, StyleNames.styleHeading4);
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
-            else if (index == 5)
-            {
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح پنج");
-                DedicatedFunctions.textFormating(selection, StyleNames.styleHeading5);
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
+            //else if (index == 4)
+            //{
+            //    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح چهار");
+            //    DedicatedFunctions.textFormating(selection, StyleNames.styleHeading4);
+            //    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+            //}
+            //else if (index == 5)
+            //{
+            //    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح پنج");
+            //    DedicatedFunctions.textFormating(selection, StyleNames.styleHeading5);
+            //    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+            //}
         }
         #endregion
 

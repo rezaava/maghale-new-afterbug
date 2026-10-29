@@ -263,26 +263,6 @@ namespace MaghaleNegar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Heading4 {
-            get {
-                object obj = ResourceManager.GetObject("Heading4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Heading5 {
-            get {
-                object obj = ResourceManager.GetObject("Heading5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap HeadingMenu {
             get {
                 object obj = ResourceManager.GetObject("HeadingMenu", resourceCulture);

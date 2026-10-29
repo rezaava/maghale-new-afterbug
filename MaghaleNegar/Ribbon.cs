@@ -465,8 +465,8 @@ namespace MaghaleNegar
                 new RibbonControlModel(RibbonControlNames.btnHeading1,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading1,true,true,"عنوان سطح یک",null,null,null),
                 new RibbonControlModel(RibbonControlNames.btnHeading2,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading2,true,true,"عنوان بخش ها",null,null,null),
                 new RibbonControlModel(RibbonControlNames.btnHeading3,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading3,true,true,"عنوان سطح سه",null,null,null),
-                new RibbonControlModel(RibbonControlNames.btnHeading4,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading4,true,true,"عنوان سطح چهار",null,null,null),
-                new RibbonControlModel(RibbonControlNames.btnHeading5,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading5,true,true,"عنوان سطح پنج",null,null,null),
+                //new RibbonControlModel(RibbonControlNames.btnHeading4,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading4,true,true,"عنوان سطح چهار",null,null,null),
+                //new RibbonControlModel(RibbonControlNames.btnHeading5,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading5,true,true,"عنوان سطح پنج",null,null,null),
 
 
                 new RibbonControlModel(RibbonControlNames.grpCaptionsAndRefer,RibbonControlModel.RibbonControlTypes.Group,null,true,true,"عنوان ها و ارجاع",null,null,null),
@@ -826,14 +826,14 @@ namespace MaghaleNegar
         {
             Globals.ThisAddIn.setHeadingStyle(3);
         }
-        public void btnHeading4_Click(Microsoft.Office.Core.IRibbonControl control)
-        {
-            Globals.ThisAddIn.setHeadingStyle(4);
-        }
-        public void btnHeading5_Click(Microsoft.Office.Core.IRibbonControl control)
-        {
-            Globals.ThisAddIn.setHeadingStyle(5);
-        }
+        //public void btnHeading4_Click(Microsoft.Office.Core.IRibbonControl control)
+        //{
+        //    Globals.ThisAddIn.setHeadingStyle(4);
+        //}
+        //public void btnHeading5_Click(Microsoft.Office.Core.IRibbonControl control)
+        //{
+        //    Globals.ThisAddIn.setHeadingStyle(5);
+        //}
         #endregion
 
         #region Caption
@@ -1251,8 +1251,8 @@ namespace MaghaleNegar
                     new KeyboardRelationModel("setNormalStyle",KeyboardShortcuts.setNormalStyle,RibbonControlNames.btnTextFormating,"\n(Alt+N)"),
                     new KeyboardRelationModel("setHeading2Style",KeyboardShortcuts.setHeading2Style,RibbonControlNames.btnHeading2,"\n(Alt+2)"),
                     new KeyboardRelationModel("setHeading3Style",KeyboardShortcuts.setHeading3Style,RibbonControlNames.btnHeading3,"\n(Alt+3)"),
-                    new KeyboardRelationModel("setHeading4Style",KeyboardShortcuts.setHeading4Style,RibbonControlNames.btnHeading4,"\n(Alt+4)"),
-                    new KeyboardRelationModel("setHeading5Style",KeyboardShortcuts.setHeading5Style,RibbonControlNames.btnHeading5,"\n(Alt+5)"),
+                    //new KeyboardRelationModel("setHeading4Style",KeyboardShortcuts.setHeading4Style,RibbonControlNames.btnHeading4,"\n(Alt+4)"),
+                    //new KeyboardRelationModel("setHeading5Style",KeyboardShortcuts.setHeading5Style,RibbonControlNames.btnHeading5,"\n(Alt+5)"),
 
                     new KeyboardRelationModel("insertShapeCaption",KeyboardShortcuts.insertShapeCaption,RibbonControlNames.btnInsertWriteCaptionForShape,"\n(Alt+P)"),
                     new KeyboardRelationModel("insertTableCaption",KeyboardShortcuts.insertTableCaption,RibbonControlNames.btnInsertWriteCaptionForTable,"\n(Alt+T)"),
@@ -1586,8 +1586,8 @@ namespace MaghaleNegar
         internal const string btnHeading1 = "btnHeading1";
         internal const string btnHeading2 = "btnHeading2";
         internal const string btnHeading3 = "btnHeading3";
-        internal const string btnHeading4 = "btnHeading4";
-        internal const string btnHeading5 = "btnHeading5";
+        //internal const string btnHeading4 = "btnHeading4";
+        //internal const string btnHeading5 = "btnHeading5";
 
 
         internal const string grpCaptionsAndRefer = "grpCaptionsAndRefer";

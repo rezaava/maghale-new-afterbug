@@ -453,6 +453,8 @@ namespace MaghaleNegar.Constants
         internal const string BodyTextNegar = "BodyTextNegar";
         internal const string TitleNegarAuthor = "TitleNegarAuthor";
         internal const string TitleNegar1 = "TitleNegar1";
+        internal const string TitleNegar2 = "TitleNegar2";
+        internal const string TitleNegar3 = "TitleNegar3";
 
         internal const WdBuiltinStyle BodyText = WdBuiltinStyle.wdStyleBodyText;
         internal const WdBuiltinStyle styleNormal = WdBuiltinStyle.wdStyleNormal;
@@ -460,8 +462,8 @@ namespace MaghaleNegar.Constants
         internal const WdBuiltinStyle styleHeading1 = WdBuiltinStyle.wdStyleHeading1;
         internal const WdBuiltinStyle styleHeading2 = WdBuiltinStyle.wdStyleHeading2;
         internal const WdBuiltinStyle styleHeading3 = WdBuiltinStyle.wdStyleHeading3;
-        internal const WdBuiltinStyle styleHeading4 = WdBuiltinStyle.wdStyleHeading4;
-        internal const WdBuiltinStyle styleHeading5 = WdBuiltinStyle.wdStyleHeading5;
+        //internal const WdBuiltinStyle styleHeading4 = WdBuiltinStyle.wdStyleHeading4;
+        //internal const WdBuiltinStyle styleHeading5 = WdBuiltinStyle.wdStyleHeading5;
         internal const WdBuiltinStyle styleHeading6 = WdBuiltinStyle.wdStyleHeading6;
         internal const WdBuiltinStyle styleHeading7 = WdBuiltinStyle.wdStyleHeading7;
         internal const WdBuiltinStyle styleHeading8 = WdBuiltinStyle.wdStyleHeading8;
@@ -818,8 +820,8 @@ namespace MaghaleNegar.Constants
         internal const int setNormalStyle = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyN;
         internal const int setHeading2Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey2;
         internal const int setHeading3Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey3;
-        internal const int setHeading4Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey4;
-        internal const int setHeading5Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey5;
+        //internal const int setHeading4Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey4;
+        //internal const int setHeading5Style = (int)WdKey.wdKeyAlt + (int)WdKey.wdKey5;
         internal const int insertShapeCaption = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyP;
         internal const int insertTableCaption = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyT;
         internal const int insertFormulaCaption = (int)WdKey.wdKeyAlt + (int)WdKey.wdKeyF;
