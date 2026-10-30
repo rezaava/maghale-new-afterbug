@@ -195,7 +195,10 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 var wordApp = Globals.ThisAddIn.Application;
 
                 // ====== 1. گرفتن تمپلیت ======
-                string templateFileName = JournalTemplateMap.GetFileName(_journalName);
+                string modularFileName = JournalTemplateAccess.GetTemplateFileName(_journalName);
+                bool isModular = modularFileName != null;
+
+                string templateFileName = isModular ? modularFileName : JournalTemplateMap.GetFileName(_journalName);
                 if (templateFileName == null)
                 {
                     throw new Exception("برای این نشریه هنوز قالبی تعریف نشده است.");
@@ -203,7 +206,9 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 string resourceName = "MaghaleNegar.Templates.Journals." + templateFileName;
                 Assembly assembly = Assembly.GetExecutingAssembly();
 
-                using (System.IO.Stream stream = assembly.GetManifestResourceStream(resourceName))
+                using (System.IO.Stream stream = isModular
+                    ? JournalTemplateAccess.GetTemplateFileStream(_journalName)
+                    : assembly.GetManifestResourceStream(resourceName))
                 {
                     if (stream == null)
                     {
@@ -256,6 +261,9 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     {
                         // ====== 3. ایجاد سند جدید ======
                         Document newDoc = wordApp.Documents.Add(templatePath);
+
+                        if (isModular)
+                            InsertJournalSubTemplates(newDoc);
 
                         // ====== 4. جاگذاری اطلاعات ======
                         FillDocumentContent(newDoc);
@@ -485,6 +493,33 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         {
             if (!doc.Bookmarks.Exists(bookmarkName)) return;
             InsertAuthorsWithFootnotes(doc, doc.Bookmarks[bookmarkName].Range, isEnglish);
+        }
+
+
+        private void InsertJournalSubTemplates(Document doc)
+        {
+            foreach (JournalSubTemplate sub in JournalTemplateAccess.GetSubTemplates(_journalName, true))
+            {
+                string tempPath = null;
+                try
+                {
+                    using (System.IO.Stream stream = DedicatedFunctions.getStream(sub.ResourcePath))
+                    {
+                        tempPath = DedicatedFunctions.copyFileToTempFolder(stream, sub.FileName);
+                    }
+
+                    int end = doc.Content.End - 1;
+                    Range insertRange = doc.Range(end, end);
+                    insertRange.InsertFile(tempPath);
+                }
+                finally
+                {
+                    if (tempPath != null && System.IO.File.Exists(tempPath))
+                    {
+                        try { System.IO.File.Delete(tempPath); } catch { }
+                    }
+                }
+            }
         }
         private void InsertAuthorsWithFootnotes(Document doc, Range bookmarkRange, bool isEnglish)
         {

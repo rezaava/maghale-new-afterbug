@@ -2342,6 +2342,8 @@ namespace MaghaleNegar
                         return WdBreakType.wdSectionBreakEvenPage;
                     else if (property.Name.Value.Equals(Constants.CustomProperties.Section_Break_OddPage.ToString(), StringComparison.OrdinalIgnoreCase))
                         return WdBreakType.wdSectionBreakOddPage;
+                    else if (property.Name.Value.Equals(Constants.CustomProperties.Section_Break_Continuous.ToString(), StringComparison.OrdinalIgnoreCase))
+                        return WdBreakType.wdSectionBreakContinuous;
                 }
             }
             return WdBreakType.wdSectionBreakNextPage;

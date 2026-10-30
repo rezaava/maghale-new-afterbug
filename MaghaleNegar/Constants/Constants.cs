@@ -87,6 +87,7 @@ namespace MaghaleNegar.Constants
 
         internal const string DefenseAnnouncements = "MaghaleNegar.Templates.DefenseAnnouncements.xml";
         internal const string Templates = "MaghaleNegar.Templates.Templates.xml";
+        internal const string Journals = "MaghaleNegar.Templates.Journals.Journals.xml";
 
         internal const string Universities = "MaghaleNegar.Constants.Universities.xml";
 
@@ -232,6 +233,7 @@ namespace MaghaleNegar.Constants
         Custom_PageSetup,
 
         Section_Break_OddPage,
+        Section_Break_Continuous,
         Section_Break_EvenPage,
     }
 

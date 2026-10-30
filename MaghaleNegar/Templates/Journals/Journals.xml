@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<journals>
+  <journal id="Ebtekar"
+           name="نشریه علمی ابتکار و خلاقیت در علوم انسانی"
+           language="fa"
+           fileName="Ebtekar.dotm"
+           path="MaghaleNegar.Templates.Journals.Ebtekar.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Abstract" fileName="2_Abstract.docx" />
+      <subTemplate order="3" id="Introduction" fileName="3_Introduction.docx" />
+      <subTemplate order="4" id="TheoreticalBackground" fileName="4_TheoreticalBackground.docx" />
+      <subTemplate order="5" id="Methodology" fileName="5_Methodology.docx" />
+      <subTemplate order="6" id="Findings" fileName="6_Findings.docx" />
+      <subTemplate order="7" id="Discussion" fileName="7_Discussion.docx" />
+      <subTemplate order="8" id="Acknowledgment" fileName="8_Acknowledgment.docx" />
+      <subTemplate order="9" id="References" fileName="9_References.docx" />
+      <subTemplate order="10" id="EnglishAbstract" fileName="10_EnglishAbstract.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Abstract" />
+      <required id="Introduction" />
+      <required id="TheoreticalBackground" />
+      <required id="Methodology" />
+      <required id="Findings" />
+      <required id="Discussion" />
+      <required id="References" />
+      <required id="EnglishAbstract" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="AIT"
+           name="Artificial Intelligence Tools in Software and Data Engineering (AITSDE)"
+           language="en"
+           fileName="AIT.dotm"
+           path="MaghaleNegar.Templates.Journals.AIT.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Abstract" fileName="2_Abstract.docx" />
+      <subTemplate order="3" id="Introduction" fileName="3_Introduction.docx" />
+      <subTemplate order="4" id="Conclusion" fileName="4_Conclusion.docx" />
+      <subTemplate order="5" id="Acknowledgment" fileName="5_Acknowledgment.docx" />
+      <subTemplate order="6" id="References" fileName="6_References.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Abstract" />
+      <required id="Introduction" />
+      <required id="Conclusion" />
+      <required id="References" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="IJAPAS"
+           name="International Journal of Applied Arts Studies"
+           language="en"
+           fileName="IJAPAS.dotm"
+           path="MaghaleNegar.Templates.Journals.IJAPAS.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Introduction" fileName="2_Introduction.docx" />
+      <subTemplate order="3" id="MaterialsAndMethods" fileName="3_MaterialsAndMethods.docx" />
+      <subTemplate order="4" id="Results" fileName="4_Results.docx" />
+      <subTemplate order="5" id="Discussion" fileName="5_Discussion.docx" />
+      <subTemplate order="6" id="Conclusion" fileName="6_Conclusion.docx" />
+      <subTemplate order="7" id="AuthorContributions" fileName="7_AuthorContributions.docx" />
+      <subTemplate order="8" id="DataAvailability" fileName="8_DataAvailability.docx" />
+      <subTemplate order="9" id="Acknowledgements" fileName="9_Acknowledgements.docx" />
+      <subTemplate order="10" id="EthicalConsiderations" fileName="10_EthicalConsiderations.docx" />
+      <subTemplate order="11" id="Funding" fileName="11_Funding.docx" />
+      <subTemplate order="12" id="ConflictOfInterest" fileName="12_ConflictOfInterest.docx" />
+      <subTemplate order="13" id="References" fileName="13_References.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Introduction" />
+      <required id="MaterialsAndMethods" />
+      <required id="Results" />
+      <required id="Discussion" />
+      <required id="Conclusion" />
+      <required id="AuthorContributions" />
+      <required id="DataAvailability" />
+      <required id="EthicalConsiderations" />
+      <required id="Funding" />
+      <required id="ConflictOfInterest" />
+      <required id="References" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="JRORS"
+           name="The Journal of Radar and Optical Remote Sensing"
+           language="en"
+           fileName="JRORS.dotm"
+           path="MaghaleNegar.Templates.Journals.JRORS.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Introduction" fileName="2_Introduction.docx" />
+      <subTemplate order="3" id="MaterialsAndMethods" fileName="3_MaterialsAndMethods.docx" />
+      <subTemplate order="4" id="Results" fileName="4_Results.docx" />
+      <subTemplate order="5" id="Discussion" fileName="5_Discussion.docx" />
+      <subTemplate order="6" id="Conclusion" fileName="6_Conclusion.docx" />
+      <subTemplate order="7" id="AuthorContributions" fileName="7_AuthorContributions.docx" />
+      <subTemplate order="8" id="DataAvailability" fileName="8_DataAvailability.docx" />
+      <subTemplate order="9" id="Acknowledgements" fileName="9_Acknowledgements.docx" />
+      <subTemplate order="10" id="EthicalConsiderations" fileName="10_EthicalConsiderations.docx" />
+      <subTemplate order="11" id="Funding" fileName="11_Funding.docx" />
+      <subTemplate order="12" id="ConflictOfInterest" fileName="12_ConflictOfInterest.docx" />
+      <subTemplate order="13" id="References" fileName="13_References.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Introduction" />
+      <required id="MaterialsAndMethods" />
+      <required id="Results" />
+      <required id="Discussion" />
+      <required id="Conclusion" />
+      <required id="AuthorContributions" />
+      <required id="DataAvailability" />
+      <required id="EthicalConsiderations" />
+      <required id="Funding" />
+      <required id="ConflictOfInterest" />
+      <required id="References" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="IMR"
+           name="پژوهش های بازاریابی اسلامی"
+           language="fa"
+           fileName="IMR.dotm"
+           path="MaghaleNegar.Templates.Journals.IMR.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Abstract" fileName="2_Abstract.docx" />
+      <subTemplate order="3" id="Introduction" fileName="3_Introduction.docx" />
+      <subTemplate order="4" id="Background" fileName="4_Background.docx" />
+      <subTemplate order="5" id="Methodology" fileName="5_Methodology.docx" />
+      <subTemplate order="6" id="Findings" fileName="6_Findings.docx" />
+      <subTemplate order="7" id="Discussion" fileName="7_Discussion.docx" />
+      <subTemplate order="8" id="References" fileName="8_References.docx" />
+      <subTemplate order="9" id="EnglishAbstract" fileName="9_EnglishAbstract.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Abstract" />
+      <required id="Introduction" />
+      <required id="Background" />
+      <required id="Methodology" />
+      <required id="Findings" />
+      <required id="Discussion" />
+      <required id="References" />
+      <required id="EnglishAbstract" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="JOSTARNAMEH"
+           name="جستارنامه ادبیات تطبیقی"
+           language="fa"
+           fileName="JOSTARNAMEH.dotm"
+           path="MaghaleNegar.Templates.Journals.JOSTARNAMEH.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Abstract" fileName="2_Abstract.docx" />
+      <subTemplate order="3" id="Introduction" fileName="3_Introduction.docx" />
+      <subTemplate order="4" id="Discussion" fileName="4_Discussion.docx" />
+      <subTemplate order="5" id="DiscussionResult" fileName="5_DiscussionResult.docx" />
+      <subTemplate order="6" id="References" fileName="6_References.docx" />
+      <subTemplate order="7" id="EnglishAbstract" fileName="7_EnglishAbstract.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Abstract" />
+      <required id="Introduction" />
+      <required id="Discussion" />
+      <required id="DiscussionResult" />
+      <required id="References" />
+      <required id="EnglishAbstract" />
+    </requiredSubTemplates>
+  </journal>
+  <journal id="TCAT"
+           name="رویکرد الهی ـ فرهنگی در تدریس"
+           language="fa"
+           fileName="TCAT.dotm"
+           path="MaghaleNegar.Templates.Journals.TCAT.">
+    <subTemplates>
+      <subTemplate order="1" id="TitleAndAuthors" fileName="1_TitleAndAuthors.docx" />
+      <subTemplate order="2" id="Introduction" fileName="2_Introduction.docx" />
+      <subTemplate order="3" id="Methodology" fileName="3_Methodology.docx" />
+      <subTemplate order="4" id="Findings" fileName="4_Findings.docx" />
+      <subTemplate order="5" id="Discussion" fileName="5_Discussion.docx" />
+      <subTemplate order="6" id="References" fileName="6_References.docx" />
+    </subTemplates>
+    <requiredSubTemplates>
+      <required id="TitleAndAuthors" />
+      <required id="Introduction" />
+      <required id="Methodology" />
+      <required id="Findings" />
+      <required id="Discussion" />
+      <required id="References" />
+    </requiredSubTemplates>
+  </journal>
+</journals>

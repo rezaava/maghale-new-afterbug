@@ -780,6 +780,7 @@
       <DependentUpon>InsertQuranControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Templates\DefenseAnnouncementsAccess.cs" />
+    <Compile Include="Templates\JournalTemplateAccess.cs" />
     <Compile Include="Templates\JournalTemplateMap.cs" />
     <Compile Include="Templates\TemplateAccess.cs" />
     <Compile Include="ThisAddIn.cs">
@@ -988,6 +989,77 @@
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\8_PersianAbstract.docx" />
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\9_Preface.docx" />
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\ScienceAndTechnologyUni.dotm" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\10_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\2_Abstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\3_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\4_TheoreticalBackground.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\5_Methodology.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\6_Findings.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\7_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\8_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\9_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\Ebtekar.dotm" />
+    <EmbeddedResource Include="Templates\Journals\AIT\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\2_Abstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\3_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\4_Conclusion.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\5_Acknowledgment.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\6_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\AIT\AIT.dotm" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\10_EthicalConsiderations.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\11_Funding.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\12_ConflictOfInterest.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\13_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\2_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\3_MaterialsAndMethods.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\4_Results.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\5_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\6_Conclusion.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\7_AuthorContributions.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\8_DataAvailability.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\9_Acknowledgements.docx" />
+    <EmbeddedResource Include="Templates\Journals\IJAPAS\IJAPAS.dotm" />
+    <EmbeddedResource Include="Templates\Journals\IMR\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\2_Abstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\3_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\4_Background.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\5_Methodology.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\6_Findings.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\7_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\8_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\9_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\IMR\IMR.dotm" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\2_Abstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\3_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\4_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\5_DiscussionResult.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\6_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\7_EnglishAbstract.docx" />
+    <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\JOSTARNAMEH.dotm" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\10_EthicalConsiderations.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\11_Funding.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\12_ConflictOfInterest.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\13_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\2_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\3_MaterialsAndMethods.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\4_Results.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\5_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\6_Conclusion.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\7_AuthorContributions.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\8_DataAvailability.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\9_Acknowledgements.docx" />
+    <EmbeddedResource Include="Templates\Journals\JRORS\JRORS.dotm" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\2_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\3_Methodology.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\4_Findings.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\5_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\6_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\TCAT.dotm" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -997,6 +1069,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Templates\Journals\Journals.xml" />
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\ScienceAndTechnologyUni.png" />
     <EmbeddedResource Include="Templates\DefenseAnnouncements\Images\DefenseAnnouncements1.png" />
     <EmbeddedResource Include="Templates\IslamicAzadUniversityCentral\IslamicAzadUniversityCentral.png" />
