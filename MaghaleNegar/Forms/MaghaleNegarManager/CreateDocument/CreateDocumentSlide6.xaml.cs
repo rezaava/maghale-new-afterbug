@@ -222,9 +222,17 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     System.IO.Directory.CreateDirectory(templatesPath);
                     string templatePath = System.IO.Path.Combine(templatesPath, templateFileName);
 
-                    using (System.IO.FileStream fileStream = new System.IO.FileStream(templatePath, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+                    try
                     {
-                        stream.CopyTo(fileStream);
+                        using (System.IO.FileStream fileStream = new System.IO.FileStream(templatePath, System.IO.FileMode.Create, System.IO.FileAccess.Write))
+                        {
+                            stream.CopyTo(fileStream);
+                        }
+                    }
+                    catch (System.IO.IOException) when (System.IO.File.Exists(templatePath))
+                    {
+                        // فایل قالب توسط سندی که باز است قفل شده؛ از نسخهٔ موجود استفاده می‌کنیم
+                        Debug.WriteLine("فایل قالب قفل است، از نسخهٔ موجود استفاده شد: " + templatePath);
                     }
 
                     // ====== 2. بستن اسناد باز ======

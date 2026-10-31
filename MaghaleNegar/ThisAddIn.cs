@@ -1490,41 +1490,34 @@ namespace MaghaleNegar
                 DedicatedFunctions.ShowErrorMessage($"خطا در اعمال قالب‌بندی چکیده:\n{ex.Message}");
             }
         }
+
+
+        private void applyHeadingWithFallback(Selection selection, string styleName, WdBuiltinStyle fallbackStyle, string undoName)
+        {
+            Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord(undoName);
+            try
+            {
+                // اول استایل خود قالب، اگه نبود Heading داخلی Word
+                if (!DedicatedFunctions.changeStyleInSelection(selection, styleName))
+                    DedicatedFunctions.changeStyleInSelection(selection, fallbackStyle);
+
+                DedicatedFunctions.changeKeyboardLanguage(selection, KeyboardLanguage.Persian, TextDirection.RTL);
+            }
+            finally
+            {
+                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
+            }
+        }
         public void setHeadingStyle(int index)
         {
             Selection selection = Globals.ThisAddIn.Application.Selection;
 
-
             if (index == 1)
-            {
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح یک");
-                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar1);
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
+                applyHeadingWithFallback(selection, StyleNames.TitleNegar1, StyleNames.styleHeading1, "قالب‌بندی عنوان سطح یک");
             else if (index == 2)
-            {
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح دو");
-                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar2);
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
+                applyHeadingWithFallback(selection, StyleNames.TitleNegar2, StyleNames.styleHeading2, "قالب‌بندی عنوان سطح دو");
             else if (index == 3)
-            {
-                Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح سه");
-                DedicatedFunctions.textFormating(selection, StyleNames.TitleNegar3);
-                Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            }
-            //else if (index == 4)
-            //{
-            //    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح چهار");
-            //    DedicatedFunctions.textFormating(selection, StyleNames.styleHeading4);
-            //    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            //}
-            //else if (index == 5)
-            //{
-            //    Globals.ThisAddIn.Application.UndoRecord.StartCustomRecord("قالب‌بندی عنوان سطح پنج");
-            //    DedicatedFunctions.textFormating(selection, StyleNames.styleHeading5);
-            //    Globals.ThisAddIn.Application.UndoRecord.EndCustomRecord();
-            //}
+                applyHeadingWithFallback(selection, StyleNames.TitleNegar3, StyleNames.styleHeading3, "قالب‌بندی عنوان سطح سه");
         }
         #endregion
 

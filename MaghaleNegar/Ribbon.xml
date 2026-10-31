@@ -96,8 +96,8 @@
 
 						<!--<button id="btnHeading1" onAction="btnHeading1_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip"/>-->
 						<button id="btnHeading2" onAction="btnHeading2_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip"/>
-						<!--<button id="btnHeading3" onAction="btnHeading3_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
-						<button id="btnHeading4" onAction="btnHeading4_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+						<button id="btnHeading3" onAction="btnHeading3_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
+						<!--<button id="btnHeading4" onAction="btnHeading4_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
 						<button id="btnHeading5" onAction="btnHeading5_Click" getImage="getImage" getEnabled="getEnabled" getVisible="getVisible" getLabel="getLabel"  getDescription="getDescription" getSupertip="getSupertip" getScreentip="getScreentip" getKeytip="getKeytip" />
 					    -->
 					</menu>

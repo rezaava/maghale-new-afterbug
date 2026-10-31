@@ -457,7 +457,7 @@ namespace MaghaleNegar
 
 
 
-                new RibbonControlModel("menu1",RibbonControlModel.RibbonControlTypes.Menu,Properties.ResourceRibbonIcons.HeadingMenu,true,true,"عنوان بندی","عنوان بندی","مدیریت عنوان های سند؛ عنوان های مورد نظر کاربر را ایجاد کرده و سطح بندی آنها را تنظیم و مدیریت می کند. این افزونه قابلیت مدیریت و شماره بندی عنوان ها تا 5 سطح را دارد. شایان ذکر است عنوان سطح اول همان شماره فصل است.",null),               
+                new RibbonControlModel("menu1",RibbonControlModel.RibbonControlTypes.Menu,Properties.ResourceRibbonIcons.HeadingMenu,true,true,"عنوان بندی","عنوان بندی","مدیریت عنوان های سند؛ عنوان های مورد نظر کاربر را ایجاد کرده و سطح بندی آنها را تنظیم و مدیریت می کند. این افزونه قابلیت مدیریت و شماره بندی عنوان ها تا 3 سطح را دارد. شایان ذکر است عنوان سطح اول همان شماره فصل است.",null),               
                 new RibbonControlModel(RibbonControlNames.title,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading1,true,true,"عنوان مقاله",null,null,null),
                 new RibbonControlModel(RibbonControlNames.sidetitle,RibbonControlModel.RibbonControlTypes.Button,Properties.ResourceRibbonIcons.Heading1,true,true,"عنوان های فرعی",null,null,null),
 
