@@ -199,17 +199,14 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 string modularFileName = JournalTemplateAccess.GetTemplateFileName(_journalName);
                 bool isModular = modularFileName != null;
 
-                string templateFileName = isModular ? modularFileName : JournalTemplateMap.GetFileName(_journalName);
+                string templateFileName = modularFileName;
                 if (templateFileName == null)
                 {
                     throw new Exception("برای این نشریه هنوز قالبی تعریف نشده است.");
                 }
-                string resourceName = "MaghaleNegar.Templates.Journals." + templateFileName;
                 Assembly assembly = Assembly.GetExecutingAssembly();
 
-                using (System.IO.Stream stream = isModular
-                    ? JournalTemplateAccess.GetTemplateFileStream(_journalName)
-                    : assembly.GetManifestResourceStream(resourceName))
+                using (System.IO.Stream stream = JournalTemplateAccess.GetTemplateFileStream(_journalName))
                 {
                     if (stream == null)
                     {
@@ -447,7 +444,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         {
             try
             {
-                bool isEnglishJournal = JournalTemplateMap.IsEnglish(_journalName);
+                bool isEnglishJournal = JournalTemplateAccess.GetLanguage(_journalName) == "en";
 
                 // ====== عنوان ======
                 // اولویت با Content Control (اگر قالب داشت)
