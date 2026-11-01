@@ -46,6 +46,12 @@ namespace MaghaleNegar.Templates
             return journal?.Attributes["fileName"].Value;
         }
 
+        internal static string GetLanguage(string journalName)
+        {
+            XmlNode journal = FindJournal(journalName);
+            return journal?.Attributes["language"]?.Value;
+        }
+
         internal static Stream GetTemplateFileStream(string journalName)
         {
             XmlNode journal = FindJournal(journalName);

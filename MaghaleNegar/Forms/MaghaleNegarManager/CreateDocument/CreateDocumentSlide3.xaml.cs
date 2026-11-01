@@ -470,7 +470,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     Name = author.Name,
                     NameEn = author.NameEn,
                     Email = author.Email,
-                    //Orcid = author.orcid ?? "",
+                    Orcid = author.Orcid ?? "",
                     IsResponsible = author.IsResponsible
                 };
 
@@ -478,6 +478,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 txtBoxAreaOfStudy.Text = author.Name;
                 txtBoxAreaOfStudyEn.Text = author.NameEn;
                 txtBoxEmail.Text = author.Email;
+                txtBoxOrcid.Text = author.Orcid ?? "";
                 chkResponsibleAuthor.IsChecked = author.IsResponsible;
 
                 if (author.IsResponsible)

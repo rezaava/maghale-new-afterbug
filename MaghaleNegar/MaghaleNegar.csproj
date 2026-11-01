@@ -990,7 +990,6 @@
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\9_Preface.docx" />
     <EmbeddedResource Include="Templates\ScienceAndTechnologyUni\ScienceAndTechnologyUni.dotm" />
     <EmbeddedResource Include="Templates\Journals\Ebtekar\10_EnglishAbstract.docx" />
-    <EmbeddedResource Include="Templates\Journals\Ebtekar\1_TitleAndAuthors.docx" />
     <EmbeddedResource Include="Templates\Journals\Ebtekar\2_Abstract.docx" />
     <EmbeddedResource Include="Templates\Journals\Ebtekar\3_Introduction.docx" />
     <EmbeddedResource Include="Templates\Journals\Ebtekar\4_TheoreticalBackground.docx" />
@@ -1060,6 +1059,7 @@
     <EmbeddedResource Include="Templates\Journals\TCAT\5_Discussion.docx" />
     <EmbeddedResource Include="Templates\Journals\TCAT\6_References.docx" />
     <EmbeddedResource Include="Templates\Journals\TCAT\TCAT.dotm" />
+    <EmbeddedResource Include="Templates\Journals\Ebtekar\1_TitleAndAuthors.docx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -1129,10 +1129,12 @@
     <Resource Include="Resources\introduction.png" />
     <Content Include="Resources\LoadingSpinner.gif" />
     <None Include="Resources\ManageSources.png" />
+    <Content Include="Resources\MaghaleNegarDocuments2.png" />
     <Content Include="Resources\Messages.png" />
     <Content Include="Resources\office-push-pin.png" />
     <Content Include="Resources\office-push-unpin.png" />
     <None Include="Resources\OneColumnPoemMode.png" />
+    <EmbeddedResource Include="Resources\orcid_icon.png" />
     <Content Include="Resources\payanNameYar_IconColor.png" />
     <None Include="Resources\PoemModeMenu.png" />
     <Content Include="Resources\question.png" />

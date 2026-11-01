@@ -25,6 +25,7 @@
       <required id="Methodology" />
       <required id="Findings" />
       <required id="Discussion" />
+	  <required id="Acknowledgment" />
       <required id="References" />
       <required id="EnglishAbstract" />
     </requiredSubTemplates>

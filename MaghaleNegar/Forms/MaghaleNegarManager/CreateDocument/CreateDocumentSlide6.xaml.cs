@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
 using MaghaleNegar.Constants;
 using MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.View;
+using MaghaleNegar.Services;
 using MaghaleNegar.Templates;
 using Microsoft.Office.Interop.Word;
 using System;
@@ -369,13 +370,23 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         {
             try
             {
-                doc.Content.LanguageID = WdLanguageID.wdPersian;
+                bool isModular = JournalTemplateAccess.GetTemplateFileName(_journalName) != null;
 
-                doc.PageSetup.TopMargin = Globals.ThisAddIn.Application.CentimetersToPoints(4.5f);
-                doc.PageSetup.BottomMargin = Globals.ThisAddIn.Application.CentimetersToPoints(2.5f);
-                doc.PageSetup.LeftMargin = Globals.ThisAddIn.Application.CentimetersToPoints(2.5f);
-                doc.PageSetup.RightMargin = Globals.ThisAddIn.Application.CentimetersToPoints(4.9f);
-
+                if (isModular)
+                {
+                    // حاشیه‌ها از خود قالب .dotm می‌آیند؛ فقط مجله‌های فارسی را فارسی می‌کنیم
+                    if (JournalTemplateAccess.GetLanguage(_journalName) == "fa")
+                        doc.Content.LanguageID = WdLanguageID.wdPersian;
+                }
+                else
+                {
+                    // نشریه‌های مهاجرت‌نشده (قالب قدیمی): رفتار قبلی
+                    doc.Content.LanguageID = WdLanguageID.wdPersian;
+                    doc.PageSetup.TopMargin = Globals.ThisAddIn.Application.CentimetersToPoints(4.5f);
+                    doc.PageSetup.BottomMargin = Globals.ThisAddIn.Application.CentimetersToPoints(2.5f);
+                    doc.PageSetup.LeftMargin = Globals.ThisAddIn.Application.CentimetersToPoints(2.5f);
+                    doc.PageSetup.RightMargin = Globals.ThisAddIn.Application.CentimetersToPoints(4.9f);
+                }
                 DedicatedFunctions.addVariable(doc, VariableIdentifierIDs._variable_id_GUID.ToString(), StringConstant.GUID);
                 DedicatedFunctions.addVariable(doc, VariableTypeIDs._variable_type_Document.ToString(), ((int)DocumentTypes.Nothing).ToString());
                 DedicatedFunctions.addVariable(doc, VariableIdentifierIDs._variable_id_Hardware.ToString(), DedicatedFunctions.getUUID());
@@ -494,6 +505,34 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             catch (Exception ex)
             {
                 //Debug.WriteLine($"خطا در SetBookmarkText برای {bookmarkName}: {ex.Message}");
+            }
+        }
+
+        private Range InsertOrcidIcon(Document doc, Range at, string orcid)
+        {
+            try
+            {
+                using (System.IO.Stream s = DedicatedFunctions.getStream("MaghaleNegar.Resources.orcid_icon.png"))
+                {
+                    string iconPath = DedicatedFunctions.copyFileToTempFolder(s, "orcid_icon.png");
+
+                    InlineShape pic = doc.InlineShapes.AddPicture(iconPath, false, true, at);
+                    pic.LockAspectRatio = Microsoft.Office.Core.MsoTriState.msoTrue;
+                    pic.Width = 12;
+                    pic.Height = 12;
+
+                    object address = "https://orcid.org/" + orcid;
+                    object screenTip = "ORCID: " + orcid;
+                    object missing = Type.Missing;
+                    Microsoft.Office.Interop.Word.Hyperlink link = doc.Hyperlinks.Add(
+                        pic.Range, ref address, ref missing, ref screenTip, ref missing, ref missing);
+                            return doc.Range(link.Range.End, link.Range.End);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"خطا در درج آیکن ORCID: {ex.Message}");
+                return at;
             }
         }
 
@@ -636,6 +675,13 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         footnote.Reference.End,
                         footnote.Reference.End
                     );
+
+                    // ORCID از ذخیره‌گاه نویسنده‌ها (با نام فارسی)
+                    string orcid = new LocalAuthorStore(Properties.Settings.Default.Mobile)
+                        .FindByName(author.AuthorName)?.Orcid;
+
+                    if (!string.IsNullOrWhiteSpace(orcid))
+                        insertRange = InsertOrcidIcon(doc, insertRange, orcid);
                 }
             }
             catch (Exception ex)
