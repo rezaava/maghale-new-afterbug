@@ -517,6 +517,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                     pic.LockAspectRatio = Microsoft.Office.Core.MsoTriState.msoTrue;
                     pic.Width = 12;
                     pic.Height = 12;
+                    pic.Range.Font.Superscript = 0;
 
                     object address = "https://orcid.org/" + orcid;
                     object screenTip = "ORCID: " + orcid;
@@ -586,7 +587,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
                 // Range جدید برای درج نویسندگان
                 Range insertRange = doc.Range(start, start);
-
+                var orcidIcons = new List<KeyValuePair<Footnote, string>>();
                 for (int i = 0; i < infoList.Count; i++)
                 {
                     var author = infoList[i];
@@ -678,7 +679,14 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         .FindByName(author.AuthorName)?.Orcid;
 
                     if (!string.IsNullOrWhiteSpace(orcid))
-                        insertRange = InsertOrcidIcon(doc, insertRange, orcid);
+                        orcidIcons.Add(new KeyValuePair<Footnote, string>(footnote, orcid));
+                }
+
+                foreach (var item in orcidIcons)
+                {
+                    Range afterRef = item.Key.Reference;
+                    afterRef.Collapse(WdCollapseDirection.wdCollapseEnd);
+                    InsertOrcidIcon(doc, afterRef, item.Value);
                 }
             }
             catch (Exception ex)
