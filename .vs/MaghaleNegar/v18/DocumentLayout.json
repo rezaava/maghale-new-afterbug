@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,6 +37,10 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CreateDocumentSlide6.xaml.cs",
@@ -44,7 +48,7 @@
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
               "ToolTip": "C:\\Users\\moaba\\Documents\\Code\\maghale-negar-app\\maghale-negar-app\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
               "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
-              "ViewState": "AgIAAPUBAAAAAAAAAAAnwP8BAABFAAAAAAAAAA==",
+              "ViewState": "AgIAANYBAAAAAAAAAAAQwOQBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T02:56:52.506Z",
               "EditorCaption": ""
