@@ -1046,13 +1046,13 @@
     <EmbeddedResource Include="Templates\Journals\TCAT\TCAT.dotm" />
     <EmbeddedResource Include="Templates\Journals\Ebtekar\1_TitleAndAuthors.docx" />
     <EmbeddedResource Include="Templates\Journals\JOSTARNAMEH\5_DiscussionResult.docx" />
-    <None Include="Templates\Journals\TCAT\1_TitleAndAuthors.docx" />
-    <None Include="Templates\Journals\TCAT\2_Introduction.docx" />
-    <None Include="Templates\Journals\TCAT\3_Methodology.docx" />
-    <None Include="Templates\Journals\TCAT\4_Findings.docx" />
-    <None Include="Templates\Journals\TCAT\5_Discussion.docx" />
-    <None Include="Templates\Journals\TCAT\7_Acknowledgement.docx" />
-    <None Include="Templates\Journals\TCAT\6_References.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\1_TitleAndAuthors.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\2_Introduction.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\3_Methodology.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\4_Findings.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\5_Discussion.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\7_Acknowledgement.docx" />
+    <EmbeddedResource Include="Templates\Journals\TCAT\6_References.docx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>

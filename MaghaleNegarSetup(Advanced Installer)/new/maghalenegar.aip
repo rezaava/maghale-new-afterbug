@@ -276,8 +276,8 @@
     <ROW Registry="Addins" Root="-1" Key="Software\Microsoft\Office\Word\Addins" Name="\"/>
     <ROW Registry="AdvancedInstaller" Root="-1" Key="Software\Caphyon\Advanced Installer" Name="\"/>
     <ROW Registry="Caphyon" Root="-1" Key="Software\Caphyon" Name="\"/>
-    <ROW Registry="Description" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Description" Value="YazdNegar" Component_="Description"/>
-    <ROW Registry="FriendlyName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="FriendlyName" Value="YazdNegar" Component_="FriendlyName"/>
+    <ROW Registry="Description" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Description" Value="MaghaleNegar" Component_="Description"/>
+    <ROW Registry="FriendlyName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="FriendlyName" Value="MaghaleNegar" Component_="FriendlyName"/>
     <ROW Registry="LZMA" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA" Name="\"/>
     <ROW Registry="LoadBehavior" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="LoadBehavior" Value="#3" Component_="LoadBehavior" VirtualValue="#"/>
     <ROW Registry="Manifest" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Manifest" Value="file:///[APPDIR]MaghaleNegar.vsto|vstolocal" Component_="Manifest"/>

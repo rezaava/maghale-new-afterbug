@@ -5,10 +5,10 @@
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
-    <ROW Property="Manufacturer" Value="YazdNegar"/>
+    <ROW Property="Manufacturer" Value="MaghaleNegar"/>
     <ROW Property="ProductCode" Value="1033:{F9A45BD9-B86D-41E4-A18D-3AA72444B376} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="YazdNegar"/>
+    <ROW Property="ProductName" Value="MaghaleNegar"/>
     <ROW Property="ProductVersion" Value="4.2.3" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{C2643792-FA0B-4B23-AECA-A74354371677}"/>
@@ -50,7 +50,7 @@
     <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{61616410-42AA-4FEF-BB65-8900DFCD8058}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
     <ROW Component="Newtonsoft.Json.dll" ComponentId="{401C3B83-79E5-4585-B353-B197DAFAD879}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="ProductInformation" ComponentId="{20860ADB-5349-4202-818F-936CF5D4EE82}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="YazdNegar.dll" ComponentId="{D02AD247-878E-477B-B6E8-D2917E439006}" Directory_="APPDIR" Attributes="0" KeyPath="YazdNegar.dll"/>
+    <ROW Component="MaghaleNegar.dll" ComponentId="{D02AD247-878E-477B-B6E8-D2917E439006}" Directory_="APPDIR" Attributes="0" KeyPath="MaghaleNegar.dll"/>
     <ROW Component="System.Buffers.dll" ComponentId="{C8D740C3-1983-476B-8771-A98A5EAD4507}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
     <ROW Component="System.IO.Pipelines.dll" ComponentId="{95B7E6DE-C240-49B6-A069-80A4E1661800}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Pipelines.dll"/>
     <ROW Component="System.Memory.dll" ComponentId="{D7E4F4F2-222C-4D24-94D1-31579179F34C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
@@ -66,46 +66,46 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="CsvHelper.dll" Component_="CsvHelper.dll" FileName="CSVHEL~1.DLL|CsvHelper.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\CsvHelper.dll" SelfReg="false"/>
-    <ROW File="CsvHelper.xml" Component_="CsvHelper.xml" FileName="CSVHEL~1.XML|CsvHelper.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\CsvHelper.xml" SelfReg="false"/>
-    <ROW File="DocumentFormat.OpenXml.dll" Component_="DocumentFormat.OpenXml.dll" FileName="DOCUME~1.DLL|DocumentFormat.OpenXml.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\DocumentFormat.OpenXml.dll" SelfReg="false"/>
-    <ROW File="DocumentFormat.OpenXml.Framework.dll" Component_="DocumentFormat.OpenXml.Framework.dll" FileName="DOCUME~2.DLL|DocumentFormat.OpenXml.Framework.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\DocumentFormat.OpenXml.Framework.dll" SelfReg="false"/>
-    <ROW File="DocumentFormat.OpenXml.Framework.xml" Component_="CsvHelper.xml" FileName="DOCUME~1.XML|DocumentFormat.OpenXml.Framework.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\DocumentFormat.OpenXml.Framework.xml" SelfReg="false"/>
-    <ROW File="DocumentFormat.OpenXml.xml" Component_="CsvHelper.xml" FileName="DOCUME~2.XML|DocumentFormat.OpenXml.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\DocumentFormat.OpenXml.xml" SelfReg="false"/>
-    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\MaterialDesignColors.dll" SelfReg="false"/>
-    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="CsvHelper.xml" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.HashCode.dll" Component_="Microsoft.Bcl.HashCode.dll" FileName="MICROS~2.DLL|Microsoft.Bcl.HashCode.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Bcl.HashCode.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Bcl.HashCode.xml" Component_="CsvHelper.xml" FileName="MICROS~2.XML|Microsoft.Bcl.HashCode.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Bcl.HashCode.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" FileName="MICROS~3.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~4.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Xaml.Behaviors.pdb" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~1.PDB|Microsoft.Xaml.Behaviors.pdb" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Xaml.Behaviors.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.Xaml.Behaviors.xml" Component_="CsvHelper.xml" FileName="MICROS~3.XML|Microsoft.Xaml.Behaviors.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Microsoft.Xaml.Behaviors.xml" SelfReg="false"/>
-    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
-    <ROW File="Newtonsoft.Json.xml" Component_="CsvHelper.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
-    <ROW File="YazdNegar.dll" Component_="YazdNegar.dll" FileName="SHIVAN~1.DLL|YazdNegar.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\YazdNegar.dll" SelfReg="false"/>
-    <ROW File="YazdNegar.dll.config" Component_="CsvHelper.xml" FileName="SHIVAN~1.CON|YazdNegar.dll.config" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\YazdNegar.dll.config" SelfReg="false"/>
-    <ROW File="YazdNegar.dll.manifest" Component_="CsvHelper.xml" FileName="SHIVAN~1.MAN|YazdNegar.dll.manifest" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\YazdNegar.dll.manifest" SelfReg="false"/>
-    <ROW File="YazdNegar.pdb" Component_="YazdNegar.dll" FileName="SHIVAN~1.PDB|YazdNegar.pdb" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\YazdNegar.pdb" SelfReg="false"/>
-    <ROW File="YazdNegar.vsto" Component_="CsvHelper.xml" FileName="SHIVAN~1.VST|YazdNegar.vsto" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\YazdNegar.vsto" SelfReg="false"/>
-    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Buffers.dll" SelfReg="false"/>
-    <ROW File="System.Buffers.xml" Component_="CsvHelper.xml" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Buffers.xml" SelfReg="false"/>
-    <ROW File="System.IO.Pipelines.dll" Component_="System.IO.Pipelines.dll" FileName="SYSTEM~2.DLL|System.IO.Pipelines.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.IO.Pipelines.dll" SelfReg="false"/>
-    <ROW File="System.IO.Pipelines.xml" Component_="CsvHelper.xml" FileName="SYSTEM~2.XML|System.IO.Pipelines.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.IO.Pipelines.xml" SelfReg="false"/>
-    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Memory.dll" SelfReg="false"/>
-    <ROW File="System.Memory.xml" Component_="CsvHelper.xml" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Memory.xml" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.xml" Component_="CsvHelper.xml" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="CsvHelper.xml" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
-    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false"/>
-    <ROW File="System.Text.Encodings.Web.xml" Component_="CsvHelper.xml" FileName="SYSTEM~6.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false"/>
-    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Text.Json.dll" SelfReg="false"/>
-    <ROW File="System.Text.Json.xml" Component_="CsvHelper.xml" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
-    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
-    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="CsvHelper.xml" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
-    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\YazdNegar\bin\Release\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="CsvHelper.dll" Component_="CsvHelper.dll" FileName="CSVHEL~1.DLL|CsvHelper.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\CsvHelper.dll" SelfReg="false"/>
+    <ROW File="CsvHelper.xml" Component_="CsvHelper.xml" FileName="CSVHEL~1.XML|CsvHelper.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\CsvHelper.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.dll" Component_="DocumentFormat.OpenXml.dll" FileName="DOCUME~1.DLL|DocumentFormat.OpenXml.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.dll" Component_="DocumentFormat.OpenXml.Framework.dll" FileName="DOCUME~2.DLL|DocumentFormat.OpenXml.Framework.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.Framework.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.xml" Component_="CsvHelper.xml" FileName="DOCUME~1.XML|DocumentFormat.OpenXml.Framework.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.Framework.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.xml" Component_="CsvHelper.xml" FileName="DOCUME~2.XML|DocumentFormat.OpenXml.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.xml" SelfReg="false"/>
+    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaterialDesignColors.dll" SelfReg="false"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="CsvHelper.xml" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.dll" Component_="Microsoft.Bcl.HashCode.dll" FileName="MICROS~2.DLL|Microsoft.Bcl.HashCode.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Bcl.HashCode.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.xml" Component_="CsvHelper.xml" FileName="MICROS~2.XML|Microsoft.Bcl.HashCode.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Bcl.HashCode.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" FileName="MICROS~3.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~4.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.pdb" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~1.PDB|Microsoft.Xaml.Behaviors.pdb" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.xml" Component_="CsvHelper.xml" FileName="MICROS~3.XML|Microsoft.Xaml.Behaviors.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="CsvHelper.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll" Component_="MaghaleNegar.dll" FileName="SHIVAN~1.DLL|MaghaleNegar.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaghaleNegar.dll" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll.config" Component_="CsvHelper.xml" FileName="SHIVAN~1.CON|MaghaleNegar.dll.config" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaghaleNegar.dll.config" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll.manifest" Component_="CsvHelper.xml" FileName="SHIVAN~1.MAN|MaghaleNegar.dll.manifest" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaghaleNegar.dll.manifest" SelfReg="false"/>
+    <ROW File="MaghaleNegar.pdb" Component_="MaghaleNegar.dll" FileName="SHIVAN~1.PDB|MaghaleNegar.pdb" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaghaleNegar.pdb" SelfReg="false"/>
+    <ROW File="MaghaleNegar.vsto" Component_="CsvHelper.xml" FileName="SHIVAN~1.VST|MaghaleNegar.vsto" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\MaghaleNegar.vsto" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="CsvHelper.xml" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.dll" Component_="System.IO.Pipelines.dll" FileName="SYSTEM~2.DLL|System.IO.Pipelines.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.IO.Pipelines.dll" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.xml" Component_="CsvHelper.xml" FileName="SYSTEM~2.XML|System.IO.Pipelines.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.IO.Pipelines.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="CsvHelper.xml" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="CsvHelper.xml" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="CsvHelper.xml" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="CsvHelper.xml" FileName="SYSTEM~6.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml" Component_="CsvHelper.xml" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="CsvHelper.xml" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~9.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\MaghaleNegar\bin\Release\System.ValueTuple.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -223,7 +223,7 @@
     <ROW Feature_="MainFeature" Component_="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll"/>
     <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
-    <ROW Feature_="MainFeature" Component_="YazdNegar.dll"/>
+    <ROW Feature_="MainFeature" Component_="MaghaleNegar.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
     <ROW Feature_="MainFeature" Component_="System.IO.Pipelines.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
@@ -279,11 +279,11 @@
     <ROW Registry="Addins" Root="-1" Key="Software\Microsoft\Office\Word\Addins" Name="\"/>
     <ROW Registry="AdvancedInstaller" Root="-1" Key="Software\Caphyon\Advanced Installer" Name="\"/>
     <ROW Registry="Caphyon" Root="-1" Key="Software\Caphyon" Name="\"/>
-    <ROW Registry="Description" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Description" Value="YazdNegar" Component_="Description"/>
-    <ROW Registry="FriendlyName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="FriendlyName" Value="YazdNegar" Component_="FriendlyName"/>
+    <ROW Registry="Description" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Description" Value="MaghaleNegar" Component_="Description"/>
+    <ROW Registry="FriendlyName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="FriendlyName" Value="MaghaleNegar" Component_="FriendlyName"/>
     <ROW Registry="LZMA" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA" Name="\"/>
     <ROW Registry="LoadBehavior" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="LoadBehavior" Value="#3" Component_="LoadBehavior" VirtualValue="#"/>
-    <ROW Registry="Manifest" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Manifest" Value="file:///[APPDIR]YazdNegar.vsto|vstolocal" Component_="Manifest"/>
+    <ROW Registry="Manifest" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="Manifest" Value="file:///[APPDIR]MaghaleNegar.vsto|vstolocal" Component_="Manifest"/>
     <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
     <ROW Registry="Manufacturer.ProductName" Root="-1" Key="Software\Microsoft\Office\Word\Addins\[Manufacturer].[ProductName]" Name="\"/>
     <ROW Registry="Microsoft" Root="-1" Key="Software\Microsoft" Name="\"/>
