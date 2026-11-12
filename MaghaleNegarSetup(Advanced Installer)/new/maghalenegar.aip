@@ -5,7 +5,7 @@
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
-    <ROW Property="Manufacturer" Value="Mana"/>
+    <ROW Property="Manufacturer" Value="Virapazhoohan Behin Fartak"/>
     <ROW Property="ProductCode" Value="1033:{73D38AAF-9F8E-47C3-97BF-A45C393FD92C} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="MaghaleNegar"/>

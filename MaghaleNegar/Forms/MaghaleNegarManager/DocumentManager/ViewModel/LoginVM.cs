@@ -115,10 +115,6 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.DocumentManager.ViewModel
                 {
                     transition.SelectedIndex = RegisterResultPageIndex;
                 }
-                else
-                {
-                    DedicatedFunctions.ShowErrorMessage("پاسخ غیر منتظره از سمت سرور", email: StringConstant.SupportEmail);
-                }
             },
             OnFailed =>
             {

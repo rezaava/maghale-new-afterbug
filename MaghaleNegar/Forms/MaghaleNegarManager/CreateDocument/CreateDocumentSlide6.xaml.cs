@@ -566,6 +566,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 }
             }
         }
+
         private void InsertAuthorsWithFootnotes(Document doc, Range bookmarkRange, bool isEnglish)
         {
             try
@@ -573,10 +574,7 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                 if (infoList == null || infoList.Count == 0)
                     return;
 
-
-                // ==========================================
-                // تنظیم شماره‌گذاری پانویس‌ها (شروع از ۱ در هر صفحه)
-                // ==========================================
+                // شماره‌گذاری پانویس‌ها (شروع از ۱ در هر صفحه)
                 doc.Footnotes.NumberingRule = WdNumberingRule.wdRestartPage;
 
                 // موقعیت شروع Bookmark
@@ -587,92 +585,53 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
                 // Range جدید برای درج نویسندگان
                 Range insertRange = doc.Range(start, start);
+
                 var orcidIcons = new List<KeyValuePair<Footnote, string>>();
+                var createdFootnotes = new List<Footnote>();   // فقط فوت‌نوت‌های همین فراخوانی
+
                 for (int i = 0; i < infoList.Count; i++)
                 {
                     var author = infoList[i];
-
                     if (author == null)
                         continue;
 
-                    // ==========================================
                     // جداکننده بین نویسندگان
-                    // ==========================================
                     if (i > 0)
                     {
                         insertRange.InsertAfter(isEnglish ? ", " : "، ");
                         insertRange.Collapse(WdCollapseDirection.wdCollapseEnd);
                     }
 
-                    // ==========================================
                     // نام نویسنده
-                    // ==========================================
-                    string authorName = isEnglish
-                        ? author.AuthorNameEn
-                        : author.AuthorName;
-
+                    string authorName = isEnglish ? author.AuthorNameEn : author.AuthorName;
                     if (string.IsNullOrWhiteSpace(authorName))
                         authorName = "-";
 
                     insertRange.InsertAfter(authorName);
                     insertRange.Collapse(WdCollapseDirection.wdCollapseEnd);
 
-                    // ==========================================
                     // متن Footnote
-                    // ==========================================
-                    string footnoteText = isEnglish
-                        ? author.AffiliationEn
-                        : author.AffiliationFa;
+                    string footnoteText = isEnglish ? author.AffiliationEn : author.AffiliationFa;
 
                     // اگر متن زبان موردنظر خالی بود، از زبان دیگر استفاده کن
                     if (string.IsNullOrWhiteSpace(footnoteText))
-                    {
-                        footnoteText = isEnglish
-                            ? author.AffiliationFa
-                            : author.AffiliationEn;
-                    }
+                        footnoteText = isEnglish ? author.AffiliationFa : author.AffiliationEn;
 
                     if (string.IsNullOrWhiteSpace(footnoteText))
-                    {
-                        footnoteText = isEnglish
-                            ? "Affiliation not specified"
-                            : "وابستگی علمی مشخص نیست";
-                    }
+                        footnoteText = isEnglish ? "Affiliation not specified" : "وابستگی علمی مشخص نیست";
 
-                    // ==========================================
                     // ایجاد Footnote واقعی Word
-                    // ==========================================
                     object reference = Type.Missing;
                     object text = footnoteText;
 
-                    Footnote footnote = doc.Footnotes.Add(
-                        insertRange,
-                        ref reference,
-                        ref text
-                    );
+                    Footnote footnote = doc.Footnotes.Add(insertRange, ref reference, ref text);
+                    createdFootnotes.Add(footnote);
 
-                    // ==========================================
-                    // تنظیمات Footnote
-                    // ==========================================
-                    footnote.Range.Font.Size = 10;
+                    // تنظیمات ظاهری و جهت Footnote
+                    ApplyFootnoteDirection(footnote, isEnglish);
 
-                    // تنظیم جهت نوشتار (RTL برای فارسی)
-                    footnote.Range.ParagraphFormat.ReadingOrder = isEnglish
-                        ? WdReadingOrder.wdReadingOrderLtr
-                        : WdReadingOrder.wdReadingOrderRtl;
-
-                    // تنظیم تراز (چپ‌چین برای انگلیسی، راست‌چین برای فارسی)
-                    footnote.Range.ParagraphFormat.Alignment = isEnglish
-                        ? WdParagraphAlignment.wdAlignParagraphLeft
-                        : WdParagraphAlignment.wdAlignParagraphRight;
-
-                    // ==========================================
                     // ادامه درج بعد از Reference
-                    // ==========================================
-                    insertRange = doc.Range(
-                        footnote.Reference.End,
-                        footnote.Reference.End
-                    );
+                    insertRange = doc.Range(footnote.Reference.End, footnote.Reference.End);
 
                     // ORCID از ذخیره‌گاه نویسنده‌ها (با نام فارسی)
                     string orcid = new LocalAuthorStore(Properties.Settings.Default.Mobile)
@@ -682,18 +641,72 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
                         orcidIcons.Add(new KeyValuePair<Footnote, string>(footnote, orcid));
                 }
 
+                // درج آیکن ORCID
                 foreach (var item in orcidIcons)
                 {
                     Range afterRef = item.Key.Reference;
                     afterRef.Collapse(WdCollapseDirection.wdCollapseEnd);
                     InsertOrcidIcon(doc, afterRef, item.Value);
                 }
+
+                // اعمال دوبارهٔ جهت و تراز (فقط روی فوت‌نوت‌های همین فراخوانی)
+                foreach (Footnote fn in createdFootnotes)
+                    ApplyFootnoteDirection(fn, isEnglish);
             }
             catch (Exception ex)
             {
                 string bookmarkName = "authors";
                 Debug.WriteLine($"خطا در InsertAuthorsWithFootnotes ({bookmarkName}): {ex}");
                 throw;
+            }
+        }
+
+        /// <summary>
+        /// جهت نوشتار و تراز فوت‌نوت: انگلیسی => LTR و چپ‌چین، فارسی => RTL و راست‌چین
+        /// </summary>
+        private void ApplyFootnoteDirection(Footnote footnote, bool isEnglish)
+        {
+            string styleName = isEnglish ? "FootnoteTextEn" : "FootnoteTextFa";
+            WdReadingOrder wantedOrder = isEnglish ? WdReadingOrder.wdReadingOrderLtr : WdReadingOrder.wdReadingOrderRtl;
+
+            try
+            {
+                Range fnRange = footnote.Range;
+
+                // 1) اعمال استایل قالب
+                try
+                {
+                    object styleObj = styleName;
+                    fnRange.set_Style(ref styleObj);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[FN] استایل {styleName} اعمال نشد: {ex.Message}");
+                }
+
+                if (isEnglish)
+                    fnRange.LanguageID = WdLanguageID.wdEnglishUS;
+
+                // 2) بررسی نتیجه؛ اگر جهت درست نبود، فرمت دستی را پاک کن و جهت را بگذار
+                foreach (Microsoft.Office.Interop.Word.Paragraph p in fnRange.Paragraphs)
+                {
+                    string current = ((Microsoft.Office.Interop.Word.Style)p.get_Style()).NameLocal;
+
+                    if (current != styleName || p.ReadingOrder != wantedOrder)
+                    {
+                        p.Reset();                       // پاک کردن فرمت دستی پاراگراف
+                        p.ReadingOrder = wantedOrder;
+                        if (isEnglish)
+                            p.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+                        // فارسی: تراز را دستی نگذار؛ در پاراگراف RTL تراز پیش‌فرض راست است
+                    }
+
+                    Debug.WriteLine($"[FN] en={isEnglish} style='{current}' RO={p.ReadingOrder} Align={p.Alignment}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[FN] خطا در ApplyFootnoteDirection: {ex}");
             }
         }
 
