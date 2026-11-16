@@ -103,33 +103,81 @@
 
                     <Border Style="{StaticResource InfoCard}">
                         <DataGrid
-                                x:Name="dgAuthors"
-                                Margin="0"
-                                AutoGenerateColumns="False"
-                                CanUserAddRows="False"
-                                CanUserDeleteRows="False"
-                                CanUserReorderColumns="False"
-                                CanUserResizeColumns="True"
-                                CanUserSortColumns="True"
-                                HeadersVisibility="Column"
-                                IsReadOnly="True"
-                                MaxHeight="150"
-                                MinHeight="100"
-                                GridLinesVisibility="Horizontal"
-                                AlternatingRowBackground="#F5F5F5"
-                                RowHeight="30"
-                                FontSize="13"
-                                BorderBrush="#DDDDDD"
-                                BorderThickness="0"
-                                Background="Transparent">
+    x:Name="dgAuthors"
+    Margin="0"
+    AutoGenerateColumns="False"
+    CanUserAddRows="False"
+    CanUserDeleteRows="False"
+    CanUserReorderColumns="False"
+    CanUserResizeColumns="True"
+    CanUserSortColumns="True"
+    HeadersVisibility="Column"
+    IsReadOnly="True"
+    MaxHeight="220"
+    MinHeight="120"
+    GridLinesVisibility="Horizontal"
+    AlternatingRowBackground="#F5F5F5"
+    FontSize="13"
+    BorderBrush="#DDDDDD"
+    BorderThickness="0"
+    Background="Transparent"
+    HorizontalScrollBarVisibility="Auto"
+    VerticalScrollBarVisibility="Auto">
 
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding Index}" Header="#" Width="Auto" MinWidth="30" />
-                                <DataGridTextColumn Binding="{Binding AuthorName}" Header="نام" Width="2*" />
-                                <DataGridTextColumn Binding="{Binding AuthorNameEn}" Header="نام (انگلیسی)" Width="2*" />
-                                <DataGridTextColumn Binding="{Binding AffiliationFa}" Header="وابستگی علمی" Width="3*" />
+                                <DataGridTextColumn
+            Binding="{Binding Index}"
+            Header="#"
+            Width="40"
+            MinWidth="35" />
+
+                                <DataGridTemplateColumn
+            Header="نام"
+            Width="1.5*"
+            MinWidth="110">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock
+                        Text="{Binding AuthorName}"
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Center"
+                        Margin="4,3" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn
+            Header="نام (انگلیسی)"
+            Width="1.5*"
+            MinWidth="120">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock
+                        Text="{Binding AuthorNameEn}"
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Center"
+                        Margin="4,3" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn
+            Header="وابستگی علمی"
+            Width="3*"
+            MinWidth="180">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock
+                        Text="{Binding AffiliationFa}"
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Center"
+                        Margin="4,3" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
+
                     </Border>
 
                     <!-- ========================================== -->

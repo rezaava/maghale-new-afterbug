@@ -169,13 +169,17 @@
                             Name="txtBoxOrcid"
                             Grid.Column="1"
                             Margin="5"
+                            FlowDirection="LeftToRight"
+                            InputMethod.IsInputMethodEnabled="False"
+                            PreviewTextInput="txtBoxOrcid_PreviewTextInput"
+                            PreviewKeyDown="txtBoxOrcid_PreviewKeyDown"
+                            TextChanged="txtBoxOrcid_TextChanged"
                             materialDesign:HintAssist.Background="{StaticResource LightBackgroundColor}"
                             materialDesign:HintAssist.FloatingScale="1"
-                            materialDesign:HintAssist.Hint="شناسه ارکید (ORCID)"
+                            materialDesign:HintAssist.Hint="شناسه ارکید (0000-0000-0000-0000)"
                             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                            Tag="English"
-                            TextWrapping="Wrap"
-                            />
+                            Tag="English" />
+
                     </Grid>
 
                     <!-- نویسنده مسئول -->

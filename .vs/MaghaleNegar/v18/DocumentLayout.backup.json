@@ -7,16 +7,40 @@
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\journalsettings\\journalsettingscontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\constants\\comboboxdata\\departmentsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\constants\\comboboxdata\\departmentsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\journalsettings\\journalsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\journalsettings\\journalsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\journalsettings\\journalsettingscontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\journalsettings\\journalsettingscontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\ribbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\ribbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\ribbon.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide6.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide6.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide6.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide6.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\constants\\comboboxdata\\departmentsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|solutionrelative:maghalenegar\\constants\\comboboxdata\\departmentsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4BD35DDE-535B-4E76-8F9A-72DF0B55F097}|MaghaleNegar\\MaghaleNegar.csproj|C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\maghalenegar\\forms\\maghalenegarmanager\\createdocument\\createdocumentslide5.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,27 +71,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DepartmentsData.cs",
-              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
-              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
-              "RelativeToolTip": "MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "JournalSettingsForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsForm.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsForm.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsForm.cs [Design]",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-14T06:01:39.283Z"
+              "WhenOpened": "2026-11-16T09:21:42.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "JournalSettingsControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
-              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAcwL8AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Ribbon.xml",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Ribbon.xml",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.xml",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Ribbon.xml",
+              "RelativeToolTip": "MaghaleNegar\\Ribbon.xml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAmwEkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-11-16T09:13:28.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ribbon.cs",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Ribbon.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Ribbon.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Ribbon.cs",
+              "RelativeToolTip": "MaghaleNegar\\Ribbon.cs",
+              "ViewState": "AgIAACQDAAAAAAAAAAA2wC4DAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-14T06:00:05.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-16T09:11:11.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateDocumentSlide6.xaml",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-16T08:40:48.758Z"
             },
             {
               "$type": "Document",
@@ -82,7 +127,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "JournalSettingsControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\JournalSettings\\JournalSettingsControl.xaml.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAqwMgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T06:00:05.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateDocumentSlide6.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAYwP8DAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T05:37:17.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateDocumentSlide3.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml.cs",
+              "ViewState": "AgIAAD8DAAAAAAAAAAAQwEsDAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T08:16:09.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DepartmentsData.cs",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
+              "RelativeToolTip": "MaghaleNegar\\Constants\\ComboBoxData\\DepartmentsData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T06:01:39.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateDocumentSlide3.xaml",
+              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
+              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
+              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
+              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide3.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-16T08:11:30.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CreateDocumentSlide5.xaml.cs",
               "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
               "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide5.xaml.cs",
@@ -91,18 +196,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-12T06:12:24.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateDocumentSlide6.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
-              "RelativeDocumentMoniker": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
-              "ToolTip": "C:\\Users\\dectato\\Documents\\Code\\C#\\maghale-new-afterbug\\MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
-              "RelativeToolTip": "MaghaleNegar\\Forms\\MaghaleNegarManager\\CreateDocument\\CreateDocumentSlide6.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T05:37:17.644Z"
             }
           ]
         }

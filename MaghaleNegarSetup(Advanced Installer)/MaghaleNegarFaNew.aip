@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="20.2" version="24.1" Modules="enterprise" RootPath="." Language="fa" Id="{2B0E6471-CE15-44A5-96D9-269219FEC295}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.2" version="24.2" Modules="enterprise" RootPath="." Language="fa" Id="{2B0E6471-CE15-44A5-96D9-269219FEC295}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
@@ -15,11 +15,11 @@
     <ROW Property="ButtonText_Continue" Value="&amp;ادامه دادن" ValueLocId="Property.ButtonText_Continue" MsiKey="ButtonText_Continue"/>
     <ROW Property="ButtonText_TryAgain" Value="&amp;تلاش مجدد" ValueLocId="Property.ButtonText_TryAgain" MsiKey="ButtonText_TryAgain"/>
     <ROW Property="Manufacturer" Value="Andisheh Pardazan Tolooe Farda"/>
-    <ROW Property="ProductCode" Value="1065:{7C04D16D-437E-48A5-A6DD-A56D209EDA55} " Type="16"/>
+    <ROW Property="ProductCode" Value="1065:{CCC01338-41DE-4A82-A312-A54E703E0644} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="MaghaleNager"/>
-    <ROW Property="ProductVersion" Value="1.3.2" Options="32"/>
-    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="ProductVersion" Value="1.3.5" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR;AI_SYNC_EXTERNALUI_CACHE_CLEANUP"/>
     <ROW Property="UpgradeCode" Value="{98D7261E-1F07-41C5-970E-C02129C94AE4}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -40,48 +40,69 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="FontsFolder" Directory_Parent="TARGETDIR" DefaultDir="FONTSF~1|FontsFolder" IsPseudoRoot="1" DirectoryOptions="3"/>
+    <ROW Directory="PersonalFolder" Directory_Parent="TARGETDIR" DefaultDir="PERSON~1|PersonalFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{BCE618E9-E3DD-46E8-872B-506858BDAF10}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{5C799278-39FE-4016-9841-46FCFEABDCBD}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{8ED105BB-21A8-495F-951D-C365FFA61930}" Directory_="APPDIR" Attributes="4" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{B6E66E2D-1B68-47C7-9B00-6D29072E2A54}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{647DEE1C-D9B5-4BB9-90A9-EB173C1FC855}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="BBadrBold.ttf" ComponentId="{A676355C-4EA3-41D1-863B-8A1036154879}" Directory_="FontsFolder" Attributes="16" Type="0"/>
     <ROW Component="CsvHelper.dll" ComponentId="{5EBE4E3C-94F5-469B-9827-A2CA09F49AAA}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.dll"/>
+    <ROW Component="CsvHelper.dll_1" ComponentId="{13CA86D9-C339-44F5-B159-6FDA0E3F1B38}" Directory_="PersonalFolder" Attributes="0" KeyPath="CsvHelper.dll_1"/>
     <ROW Component="CsvHelper.xml" ComponentId="{EC57656C-DB79-47ED-B2F7-A784207391AB}" Directory_="APPDIR" Attributes="0" KeyPath="CsvHelper.xml" Type="0"/>
+    <ROW Component="CsvHelper.xml_1" ComponentId="{F59350A8-0D26-4F11-9C4C-353A72766CA4}" Directory_="PersonalFolder" Attributes="0" KeyPath="CsvHelper.xml_1" Type="0"/>
     <ROW Component="Description" ComponentId="{0FD7470A-FCDD-4FFF-BCAC-AFFC0342EBD3}" Directory_="APPDIR" Attributes="4" KeyPath="Description"/>
     <ROW Component="Description_1" ComponentId="{FCF3D7AD-B71E-4FC6-ACE0-D63316E33C23}" Directory_="APPDIR" Attributes="4" KeyPath="Description_1"/>
     <ROW Component="DocumentFormat.OpenXml.Framework.dll" ComponentId="{78794FD9-692A-44A0-B951-26362BFC25FF}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.Framework.dll"/>
+    <ROW Component="DocumentFormat.OpenXml.Framework.dll_1" ComponentId="{6072EB46-E5C5-47E5-891C-2785E9976BAF}" Directory_="PersonalFolder" Attributes="0" KeyPath="DocumentFormat.OpenXml.Framework.dll_1"/>
     <ROW Component="DocumentFormat.OpenXml.dll" ComponentId="{7A141853-EE95-48B0-9994-F45FCC66A775}" Directory_="APPDIR" Attributes="0" KeyPath="DocumentFormat.OpenXml.dll"/>
+    <ROW Component="DocumentFormat.OpenXml.dll_1" ComponentId="{A5F8C188-90AB-4DC9-ADB7-845B70EC324F}" Directory_="PersonalFolder" Attributes="0" KeyPath="DocumentFormat.OpenXml.dll_1"/>
     <ROW Component="FriendlyName" ComponentId="{17F86F34-1C0E-4959-B668-F904D7C19B3E}" Directory_="APPDIR" Attributes="4" KeyPath="FriendlyName"/>
     <ROW Component="FriendlyName_1" ComponentId="{45C24F7F-53B1-4D0E-9AD6-DB62E89A9C1B}" Directory_="APPDIR" Attributes="4" KeyPath="FriendlyName_1"/>
     <ROW Component="LoadBehavior" ComponentId="{D1BE55C9-EFD0-4810-B244-5857CDEE0EE6}" Directory_="APPDIR" Attributes="4" KeyPath="LoadBehavior"/>
     <ROW Component="LoadBehavior_1" ComponentId="{239E3951-BFCA-41CC-96B1-D46716A8F3A6}" Directory_="APPDIR" Attributes="4" KeyPath="LoadBehavior_1"/>
     <ROW Component="MaghaleNegar.dll" ComponentId="{43BD3A71-7327-4315-8063-5BD306AC2ABF}" Directory_="APPDIR" Attributes="0" KeyPath="MaghaleNegar.dll"/>
+    <ROW Component="MaghaleNegar.dll_1" ComponentId="{1C6CB012-AE32-4098-9ECC-B06FF1FB754D}" Directory_="PersonalFolder" Attributes="0" KeyPath="MaghaleNegar.dll_1"/>
     <ROW Component="Manifest" ComponentId="{E536A249-DC16-4984-B3BB-CB7CAD69DE0D}" Directory_="APPDIR" Attributes="4" KeyPath="Manifest"/>
     <ROW Component="Manifest_1" ComponentId="{C58BB05B-7CB5-4709-BC72-9ADBD1D9ED01}" Directory_="APPDIR" Attributes="4" KeyPath="Manifest_1"/>
     <ROW Component="MaterialDesignColors.dll" ComponentId="{61F49462-2741-4F89-B500-09E2C665FCCE}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignColors.dll_1" ComponentId="{6FFDC946-2373-45E5-A716-4628CD353689}" Directory_="PersonalFolder" Attributes="0" KeyPath="MaterialDesignColors.dll_1"/>
     <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{F113B70E-F996-44C3-8B2A-9AB45A29A100}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll_1" ComponentId="{C4D5BB4A-5F95-4382-8D37-ACBBC08EECCE}" Directory_="PersonalFolder" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll_1"/>
     <ROW Component="Microsoft" ComponentId="{83B8798A-AC0C-4BD0-AD2E-5F2268988B06}" Directory_="APPDIR" Attributes="4" KeyPath="Microsoft"/>
     <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{410004FD-618B-4897-AC7C-306F1C0CEA4B}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll_1" ComponentId="{892E7083-4893-4383-83AC-AC9C8225DAB5}" Directory_="PersonalFolder" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll_1"/>
     <ROW Component="Microsoft.Bcl.HashCode.dll" ComponentId="{5590D162-DA9D-499C-9878-66DFFFAC00D7}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.HashCode.dll"/>
+    <ROW Component="Microsoft.Bcl.HashCode.dll_1" ComponentId="{16612BA8-DBB4-4FA0-B772-4923ABB275F8}" Directory_="PersonalFolder" Attributes="0" KeyPath="Microsoft.Bcl.HashCode.dll_1"/>
     <ROW Component="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" ComponentId="{CDEC3A1B-A395-4F1A-8B7C-F5CB9EB2271E}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+    <ROW Component="Microsoft.Office.Tools.Common.v4.0_1_.Utilities.dll" ComponentId="{E39274F7-D16F-4BB1-AF28-98B2FDD92158}" Directory_="PersonalFolder" Attributes="0" KeyPath="Microsoft.Office.Tools.Common.v4.0_1_.Utilities.dll"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{4346F2AA-708D-4011-9393-14D3F6963C32}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_1" ComponentId="{85BC0FA5-0138-45ED-ADBE-B0940B2BA1CC}" Directory_="PersonalFolder" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_1"/>
     <ROW Component="Newtonsoft.Json.dll" ComponentId="{28F0DAFC-23F2-4100-98BB-C141E5A52542}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="Newtonsoft.Json.dll_1" ComponentId="{040CCD4E-CB44-431C-8FCE-A02FA06024F6}" Directory_="PersonalFolder" Attributes="0" KeyPath="Newtonsoft.Json.dll_1"/>
     <ROW Component="Office" ComponentId="{8075ACE7-1FD9-4C18-9584-CA367C375E2E}" Directory_="APPDIR" Attributes="4" KeyPath="Office"/>
     <ROW Component="Office_1" ComponentId="{3FE0BBC0-8B6E-48C5-BAC2-77680C7F6384}" Directory_="APPDIR" Attributes="4" KeyPath="Office_1"/>
     <ROW Component="ProductInformation" ComponentId="{DDB594EA-1636-4EDF-B7C5-59DA9921835F}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{AE06088A-68C2-4D24-9B5D-406D147BF428}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="System.Buffers.dll" ComponentId="{F33BF444-BBC3-43AF-8636-5CF54A58AE3D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.Buffers.dll_1" ComponentId="{BC759E6E-7AFD-46CB-A0B9-EF5BD1D75764}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Buffers.dll_1"/>
     <ROW Component="System.IO.Pipelines.dll" ComponentId="{AB6FDC80-3479-447F-AAE0-F055ECBE660B}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Pipelines.dll"/>
+    <ROW Component="System.IO.Pipelines.dll_1" ComponentId="{4247B856-40AF-4FD2-94A6-6C221AF37EA5}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.IO.Pipelines.dll_1"/>
     <ROW Component="System.Memory.dll" ComponentId="{5BE7392C-BBDC-4FFA-9AD3-52D5300361B4}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Memory.dll_1" ComponentId="{3B97EAF4-6055-4B49-BC64-00C2CDF7D2B7}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Memory.dll_1"/>
     <ROW Component="System.Numerics.Vectors.dll" ComponentId="{DBA5486B-F1D1-44AC-A97E-02CA93778587}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll_1" ComponentId="{CF5044CE-5181-4D56-A1E3-38BAEE93B0BA}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Numerics.Vectors.dll_1"/>
+    <ROW Component="System.Runtime.CompilerServices.Un_1_safe.dll" ComponentId="{C9E19091-428A-457B-9F79-A319FE6486E0}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Runtime.CompilerServices.Un_1_safe.dll"/>
     <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{1764CB4B-FED2-49A5-8F91-00F3A587DE87}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
     <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{F24746FF-F1FD-4D2D-A66F-C1AD8F1B1B54}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll_1" ComponentId="{26D85D19-9FF0-40C8-BE0D-5336C5E536B1}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Text.Encodings.Web.dll_1"/>
     <ROW Component="System.Text.Json.dll" ComponentId="{E23575E7-26A2-438C-A366-A87DA419ADBB}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Text.Json.dll_1" ComponentId="{7DC26351-36A0-4647-8361-0522C3982165}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Text.Json.dll_1"/>
     <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{A04AFB1C-2541-43B6-BC49-F2F6BA3EB14D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll_1" ComponentId="{01E0AB13-A524-4ABF-8D19-E34201305880}" Directory_="PersonalFolder" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll_1"/>
     <ROW Component="Word" ComponentId="{2696156C-4CFF-4F62-B610-C9A2FA004BBF}" Directory_="APPDIR" Attributes="4" KeyPath="Word"/>
     <ROW Component="Word_1" ComponentId="{A85CE530-DF41-461C-A291-7BBFCFF47E45}" Directory_="APPDIR" Attributes="4" KeyPath="Word_1"/>
   </COMPONENT>
@@ -147,6 +168,45 @@
     <ROW File="System.Text.Json.xml" Component_="CsvHelper.xml" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
     <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
     <ROW File="System.Threading.Tasks.Extensions.xml" Component_="CsvHelper.xml" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
+    <ROW File="CsvHelper.dll_1" Component_="CsvHelper.dll_1" FileName="CSVHEL~1.DLL|CsvHelper.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\CsvHelper.dll" SelfReg="false"/>
+    <ROW File="CsvHelper.xml_1" Component_="CsvHelper.xml_1" FileName="CSVHEL~1.XML|CsvHelper.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\CsvHelper.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.dll_1" Component_="DocumentFormat.OpenXml.dll_1" FileName="DOCUME~1.DLL|DocumentFormat.OpenXml.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.dll_1" Component_="DocumentFormat.OpenXml.Framework.dll_1" FileName="DOCUME~2.DLL|DocumentFormat.OpenXml.Framework.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.Framework.dll" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.Framework.xml_1" Component_="CsvHelper.xml_1" FileName="DOCUME~1.XML|DocumentFormat.OpenXml.Framework.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.Framework.xml" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.xml_1" Component_="CsvHelper.xml_1" FileName="DOCUME~2.XML|DocumentFormat.OpenXml.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\DocumentFormat.OpenXml.xml" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll_1" Component_="MaghaleNegar.dll_1" FileName="MAGHAL~1.DLL|MaghaleNegar.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaghaleNegar.dll" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll.config_1" Component_="CsvHelper.xml_1" FileName="MAGHAL~1.CON|MaghaleNegar.dll.config" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaghaleNegar.dll.config" SelfReg="false"/>
+    <ROW File="MaghaleNegar.dll.manifest_1" Component_="CsvHelper.xml_1" FileName="MAGHAL~1.MAN|MaghaleNegar.dll.manifest" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaghaleNegar.dll.manifest" SelfReg="false"/>
+    <ROW File="MaghaleNegar.pdb_1" Component_="MaghaleNegar.dll_1" FileName="MAGHAL~1.PDB|MaghaleNegar.pdb" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaghaleNegar.pdb" SelfReg="false"/>
+    <ROW File="MaghaleNegar.vsto_1" Component_="CsvHelper.xml_1" FileName="MAGHAL~1.VST|MaghaleNegar.vsto" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaghaleNegar.vsto" SelfReg="false"/>
+    <ROW File="MaterialDesignColors.dll_1" Component_="MaterialDesignColors.dll_1" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaterialDesignColors.dll" SelfReg="false"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll_1" Component_="MaterialDesignThemes.Wpf.dll_1" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\MaterialDesignThemes.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll_1" Component_="Microsoft.Bcl.AsyncInterfaces.dll_1" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml_1" Component_="CsvHelper.xml_1" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.dll_1" Component_="Microsoft.Bcl.HashCode.dll_1" FileName="MICROS~2.DLL|Microsoft.Bcl.HashCode.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Bcl.HashCode.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.HashCode.xml_1" Component_="CsvHelper.xml_1" FileName="MICROS~2.XML|Microsoft.Bcl.HashCode.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Bcl.HashCode.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Office.Tools.Common.v4.0_1_.Utilities.dll" Component_="Microsoft.Office.Tools.Common.v4.0_1_.Utilities.dll" FileName="MICROS~3.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_1" Component_="Microsoft.Xaml.Behaviors.dll_1" FileName="MICROS~4.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.pdb_1" Component_="Microsoft.Xaml.Behaviors.dll_1" FileName="MICROS~1.PDB|Microsoft.Xaml.Behaviors.pdb" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.xml_1" Component_="CsvHelper.xml_1" FileName="MICROS~3.XML|Microsoft.Xaml.Behaviors.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Microsoft.Xaml.Behaviors.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll_1" Component_="Newtonsoft.Json.dll_1" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml_1" Component_="CsvHelper.xml_1" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="System.Buffers.dll_1" Component_="System.Buffers.dll_1" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.dll_1" Component_="System.IO.Pipelines.dll_1" FileName="SYSTEM~2.DLL|System.IO.Pipelines.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.IO.Pipelines.dll" SelfReg="false"/>
+    <ROW File="System.IO.Pipelines.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~2.XML|System.IO.Pipelines.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.IO.Pipelines.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll_1" Component_="System.Memory.dll_1" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll_1" Component_="System.Numerics.Vectors.dll_1" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Un_1_safe.dll" Component_="System.Runtime.CompilerServices.Un_1_safe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Un_1_safe.xml" Component_="CsvHelper.xml_1" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.dll_1" Component_="System.Text.Encodings.Web.dll_1" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encodings.Web.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~6.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false"/>
+    <ROW File="System.Text.Json.dll_1" Component_="System.Text.Json.dll_1" FileName="SYSTEM~7.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Text.Json.dll" SelfReg="false"/>
+    <ROW File="System.Text.Json.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~7.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Text.Json.xml" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll_1" Component_="System.Threading.Tasks.Extensions.dll_1" FileName="SYSTEM~8.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml_1" Component_="CsvHelper.xml_1" FileName="SYSTEM~8.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\MaghaleNegar\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiActionTextAliasComponent">
     <ROW AliasRowId="SetODBCFolders" AliasRowOperation="2" Description="بارگیری پوشه های ODBC"/>
@@ -608,6 +668,26 @@
     <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Text.Json.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="CsvHelper.xml_1"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DocumentFormat.OpenXml.Framework.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="MaghaleNegar.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignColors.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="MaterialDesignThemes.Wpf.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.HashCode.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Office.Tools.Common.v4.0_1_.Utilities.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Pipelines.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Un_1_safe.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Json.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFontsComponent">
     <ROW File_="BBadrBold.ttf"/>

@@ -1,17 +1,16 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using MaghaleNegar.Constants;
+using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Collections.Generic;
 
 namespace MaghaleNegar.Forms.JournalSettings
 {
-
-
     public partial class JournalSettingsControl : UserControl, Interfaces.IStatusFormRequest
     {
+        private readonly Dictionary<string, string> _original = new Dictionary<string, string>();
         private const string TagJournalName = "JournalName";
         private const string TagIssue = "JournalIssue";
         private const string TagSeason = "JournalSeason";
@@ -22,6 +21,7 @@ namespace MaghaleNegar.Forms.JournalSettings
         private const string DefaultText = "…";
         private const string DefaultDate = "//";
         private const string TagVolume = "JournalVolume";
+        private const string VarJournalName = "JournalName";
         //private const string TagIssue = "JournalIssue";
         //private const string TagSeason = "JournalSeason";
         //private const string TagYear = "JournalYear";
@@ -35,6 +35,12 @@ namespace MaghaleNegar.Forms.JournalSettings
         public Action AlwaysOnTopEnableRequest { get; set; }
         public Action AlwaysOnTopDisableRequest { get; set; }
 
+        private string LoadValue(string tag)
+        {
+            string value = ReadField(tag);
+            _original[tag] = value;
+            return value;
+        }
         public JournalSettingsControl(Document doc)
         {
             InitializeComponent();
@@ -45,7 +51,8 @@ namespace MaghaleNegar.Forms.JournalSettings
             btnConfirm.Click += BtnConfirm_Click;
 
             // ====== ✅ پر کردن اسم نشریه از سند ======
-            LoadJournalName();
+            LoadFields();
+
         }
 
 
@@ -135,14 +142,21 @@ namespace MaghaleNegar.Forms.JournalSettings
 
         private void LoadFields()
         {
-            txtJournalTitle.Text = ReadField(TagJournalName);
-            txtVolume.Text = ReadField(TagVolume);
-            txtIssue.Text = ReadField(TagIssue);
-            txtYear.Text = ReadField(TagYear);
-            txtReceivedDate.Text = ReadField(TagReceived);
-            txtAcceptedDate.Text = ReadField(TagAccepted);
+            string journalName = ReadField(TagJournalName);
+            if (string.IsNullOrEmpty(journalName))
+            {
+                journalName = DedicatedFunctions.getStaticVariableValue(doc, VarJournalName);
+                if (journalName == SettingValues.NotExist) journalName = "";
+            }
+            txtJournalTitle.Text = journalName;
+            txtJournalTitle.IsReadOnly = true;
+            txtVolume.Text = LoadValue(TagVolume);
+            txtIssue.Text = LoadValue(TagIssue);
+            txtYear.Text = LoadValue(TagYear);
+            txtReceivedDate.Text = LoadValue(TagReceived);
+            txtAcceptedDate.Text = LoadValue(TagAccepted);
 
-            string season = ReadField(TagSeason);
+            string season = LoadValue(TagSeason);
             foreach (ComboBoxItem item in cmbSeason.Items)
             {
                 if ((item.Content as string) == season)
@@ -151,6 +165,18 @@ namespace MaghaleNegar.Forms.JournalSettings
                     break;
                 }
             }
+            if (string.IsNullOrEmpty(season)) cmbSeason.SelectedIndex = -1;
+        }
+
+        private void SaveField(string tag, string value, string defaultText)
+        {
+            string current = (value ?? "").Trim();
+            string original;
+            _original.TryGetValue(tag, out original);
+
+            if (current == (original ?? "")) return;   // تغییری نکرده؛ به سند دست نزن
+
+            WriteField(tag, current, defaultText);
         }
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
@@ -161,8 +187,7 @@ namespace MaghaleNegar.Forms.JournalSettings
                          && string.IsNullOrWhiteSpace(txtIssue.Text)
                          && string.IsNullOrWhiteSpace(txtYear.Text)
                          && string.IsNullOrWhiteSpace(txtReceivedDate.Text)
-                         && string.IsNullOrWhiteSpace(txtAcceptedDate.Text)
-                         && string.IsNullOrWhiteSpace(txtJournalTitle.Text);
+                         && string.IsNullOrWhiteSpace(txtAcceptedDate.Text);
             if (allEmpty)
             {
                 lblStatus.Text = "لطفاً اطلاعات را وارد کنید";
@@ -172,14 +197,12 @@ namespace MaghaleNegar.Forms.JournalSettings
             try
             {
                 if (!string.IsNullOrWhiteSpace(txtJournalTitle.Text))
-                    WriteField(TagJournalName, txtJournalTitle.Text, txtJournalTitle.Text);
-
-                WriteField(TagVolume, txtVolume.Text, DefaultText);
-                WriteField(TagIssue, txtIssue.Text, DefaultText);
-                WriteField(TagSeason, season, DefaultText);
-                WriteField(TagYear, txtYear.Text, DefaultText);
-                WriteField(TagReceived, txtReceivedDate.Text, DefaultDate);
-                WriteField(TagAccepted, txtAcceptedDate.Text, DefaultDate);
+                SaveField(TagVolume, txtVolume.Text, DefaultText);
+                SaveField(TagIssue, txtIssue.Text, DefaultText);
+                SaveField(TagSeason, season, DefaultText);
+                SaveField(TagYear, txtYear.Text, DefaultText);
+                SaveField(TagReceived, txtReceivedDate.Text, DefaultDate);
+                SaveField(TagAccepted, txtAcceptedDate.Text, DefaultDate);
             }
             catch (Exception ex)
             {

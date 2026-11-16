@@ -826,14 +826,6 @@ namespace MaghaleNegar
         {
             Globals.ThisAddIn.setHeadingStyle(3);
         }
-        //public void btnHeading4_Click(Microsoft.Office.Core.IRibbonControl control)
-        //{
-        //    Globals.ThisAddIn.setHeadingStyle(4);
-        //}
-        //public void btnHeading5_Click(Microsoft.Office.Core.IRibbonControl control)
-        //{
-        //    Globals.ThisAddIn.setHeadingStyle(5);
-        //}
         #endregion
 
         #region Caption

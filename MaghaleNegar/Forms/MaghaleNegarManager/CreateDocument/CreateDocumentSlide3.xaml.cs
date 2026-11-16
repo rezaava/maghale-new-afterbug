@@ -1,4 +1,6 @@
-﻿using MaghaleNegar.Models;
+using System.Text;
+using System.Text.RegularExpressions;
+using MaghaleNegar.Models;
 using MaghaleNegar.Services;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
@@ -100,6 +102,9 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
             txtBoxEmail.IsEnabled = true;
             txtBoxEmail.Text = "";
             txtBoxOrcid.Text = "";
+            txtBoxEmail.TextChanged += (s, e) => UpdateAddAuthorButtonState();
+            UpdateAddAuthorButtonState();
+
 
             // رویدادهای CheckBox
             chkResponsibleAuthor.Checked += ChkResponsibleAuthor_Checked;
@@ -766,6 +771,8 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         #region Validators
         private bool validateControls()
         {
+            UpdateAddAuthorButtonState();
+
             bool isValid = true;
 
             // 1. بررسی فیلدهای متنی
@@ -826,6 +833,13 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
 
         private bool validateTextBox(TextBox textBox, ControlLevels controlLevel, bool onlyReturn)
         {
+            if (textBox == txtBoxEmail && !string.IsNullOrWhiteSpace(textBox.Text) && !IsValidEmail(textBox.Text))
+            {
+                if (!onlyReturn)
+                    errorControl(textBox, "ساختار ایمیل معتبر نیست");
+                return false;
+            }
+
             if (controlLevel == ControlLevels.Optional)
             {
                 normalControl(textBox);
@@ -949,6 +963,92 @@ namespace MaghaleNegar.Forms.MaghaleNegarManager.CreateDocument
         }
 
         #endregion
+
+        private bool isFormattingOrcid;
+
+        private static string ExtractOrcidChars(string input)
+        {
+            var sb = new StringBuilder();
+            foreach (char c in input ?? "")
+            {
+                if (char.IsDigit(c))
+                    sb.Append((char)('0' + (int)char.GetNumericValue(c)));
+                else if ((c == 'x' || c == 'X') && sb.Length == 15)
+                    sb.Append('X');
+
+                if (sb.Length == 16)
+                    break;
+            }
+            return sb.ToString();
+        }
+
+        private static string FormatOrcid(string raw)
+        {
+            var parts = new List<string>();
+            for (int i = 0; i < raw.Length; i += 4)
+                parts.Add(raw.Substring(i, Math.Min(4, raw.Length - i)));
+            return string.Join("-", parts);
+        }
+
+        private void txtBoxOrcid_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !e.Text.All(c => char.IsDigit(c) || c == 'x' || c == 'X');
+        }
+
+        private void txtBoxOrcid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (textBox.SelectionLength > 0)
+                return;
+
+            if (e.Key == Key.Back && textBox.CaretIndex > 1 && textBox.Text[textBox.CaretIndex - 1] == '-')
+                textBox.CaretIndex--;
+            else if (e.Key == Key.Delete && textBox.CaretIndex < textBox.Text.Length && textBox.Text[textBox.CaretIndex] == '-')
+                textBox.CaretIndex++;
+        }
+
+        private void txtBoxOrcid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (isFormattingOrcid)
+                return;
+
+            var textBox = (TextBox)sender;
+            int rawCaret = ExtractOrcidChars(textBox.Text.Substring(0, textBox.CaretIndex)).Length;
+            string raw = ExtractOrcidChars(textBox.Text);
+            string formatted = FormatOrcid(raw);
+
+            if (textBox.Text == formatted)
+                return;
+
+            isFormattingOrcid = true;
+            textBox.Text = formatted;
+            textBox.CaretIndex = Math.Min(rawCaret + rawCaret / 4, formatted.Length);
+            isFormattingOrcid = false;
+        }
+
+        private static readonly Regex EmailRegex = new Regex(
+            @"^[A-Za-z0-9_%+-]+(\.[A-Za-z0-9_%+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$",
+            RegexOptions.Compiled);
+
+        private static bool IsValidEmail(string email)
+        {
+            return EmailRegex.IsMatch((email ?? "").Trim());
+        }
+
+        private void UpdateAddAuthorButtonState()
+        {
+            string email = txtBoxEmail.Text.Trim();
+            bool isRequired = chkResponsibleAuthor.IsChecked == true;
+
+            btnAddAuthor.IsEnabled = string.IsNullOrEmpty(email) ? !isRequired : IsValidEmail(email);
+        }
 
 
         private static bool TryNormalizeOrcid(string input, out string normalized)
